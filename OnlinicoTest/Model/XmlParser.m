@@ -13,7 +13,7 @@
 @interface XmlParser()
 @property (nonatomic, strong) NSMutableArray *feedArray;
 @property (nonatomic, strong) Article *currentArticle;
-@property (nonatomic, strong) NSString *currentElement;
+@property (nonatomic, strong) NSMutableString *currentElement;
 @end
 
 @implementation XmlParser
@@ -68,9 +68,9 @@ didStartElement:(NSString *)elementName
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
     
     if (!self.currentElement) {
-        self.currentElement = string;
+        self.currentElement = [[NSMutableString alloc] initWithString:string];
     } else {
-        self.currentElement = [self.currentElement stringByAppendingString:string];
+        [self.currentElement appendString:string];
     }
 }
 
