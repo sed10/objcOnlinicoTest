@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		87F54C1C1EAF726A0084394A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F54C1B1EAF726A0084394A /* main.m */; };
 		87F54C1F1EAF726A0084394A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F54C1E1EAF726A0084394A /* AppDelegate.m */; };
-		87F54C221EAF726A0084394A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F54C211EAF726A0084394A /* ViewController.m */; };
 		87F54C251EAF726A0084394A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87F54C231EAF726A0084394A /* Main.storyboard */; };
 		87F54C281EAF726A0084394A /* OnlinicoTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 87F54C261EAF726A0084394A /* OnlinicoTest.xcdatamodeld */; };
 		87F54C2A1EAF726A0084394A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87F54C291EAF726A0084394A /* Assets.xcassets */; };
 		87F54C2D1EAF726A0084394A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87F54C2B1EAF726A0084394A /* LaunchScreen.storyboard */; };
+		87F54C361EAF7EE00084394A /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F54C351EAF7EE00084394A /* Article.m */; };
+		87F54C3A1EAF84950084394A /* XmlParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F54C391EAF84950084394A /* XmlParser.m */; };
+		87F54C3D1EB063580084394A /* FeedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F54C3C1EB063580084394A /* FeedTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,13 +23,17 @@
 		87F54C1B1EAF726A0084394A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		87F54C1D1EAF726A0084394A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		87F54C1E1EAF726A0084394A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		87F54C201EAF726A0084394A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		87F54C211EAF726A0084394A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		87F54C241EAF726A0084394A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		87F54C271EAF726A0084394A /* OnlinicoTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OnlinicoTest.xcdatamodel; sourceTree = "<group>"; };
 		87F54C291EAF726A0084394A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87F54C2C1EAF726A0084394A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		87F54C2E1EAF726A0084394A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		87F54C341EAF7EE00084394A /* Article.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Article.h; path = Model/Article.h; sourceTree = "<group>"; };
+		87F54C351EAF7EE00084394A /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Article.m; path = Model/Article.m; sourceTree = "<group>"; };
+		87F54C381EAF84950084394A /* XmlParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XmlParser.h; path = Model/XmlParser.h; sourceTree = "<group>"; };
+		87F54C391EAF84950084394A /* XmlParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XmlParser.m; path = Model/XmlParser.m; sourceTree = "<group>"; };
+		87F54C3B1EB063580084394A /* FeedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedTableViewController.h; sourceTree = "<group>"; };
+		87F54C3C1EB063580084394A /* FeedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,15 +66,12 @@
 		87F54C191EAF726A0084394A /* OnlinicoTest */ = {
 			isa = PBXGroup;
 			children = (
-				87F54C1D1EAF726A0084394A /* AppDelegate.h */,
-				87F54C1E1EAF726A0084394A /* AppDelegate.m */,
-				87F54C201EAF726A0084394A /* ViewController.h */,
-				87F54C211EAF726A0084394A /* ViewController.m */,
 				87F54C231EAF726A0084394A /* Main.storyboard */,
-				87F54C291EAF726A0084394A /* Assets.xcassets */,
-				87F54C2B1EAF726A0084394A /* LaunchScreen.storyboard */,
-				87F54C2E1EAF726A0084394A /* Info.plist */,
+				87F54C3B1EB063580084394A /* FeedTableViewController.h */,
+				87F54C3C1EB063580084394A /* FeedTableViewController.m */,
+				87F54C371EAF7EE40084394A /* Model */,
 				87F54C261EAF726A0084394A /* OnlinicoTest.xcdatamodeld */,
+				87F54C2E1EAF726A0084394A /* Info.plist */,
 				87F54C1A1EAF726A0084394A /* Supporting Files */,
 			);
 			path = OnlinicoTest;
@@ -77,9 +80,24 @@
 		87F54C1A1EAF726A0084394A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				87F54C1D1EAF726A0084394A /* AppDelegate.h */,
+				87F54C1E1EAF726A0084394A /* AppDelegate.m */,
+				87F54C291EAF726A0084394A /* Assets.xcassets */,
+				87F54C2B1EAF726A0084394A /* LaunchScreen.storyboard */,
 				87F54C1B1EAF726A0084394A /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		87F54C371EAF7EE40084394A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				87F54C341EAF7EE00084394A /* Article.h */,
+				87F54C351EAF7EE00084394A /* Article.m */,
+				87F54C381EAF84950084394A /* XmlParser.h */,
+				87F54C391EAF84950084394A /* XmlParser.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,10 +172,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87F54C361EAF7EE00084394A /* Article.m in Sources */,
+				87F54C3A1EAF84950084394A /* XmlParser.m in Sources */,
 				87F54C281EAF726A0084394A /* OnlinicoTest.xcdatamodeld in Sources */,
-				87F54C221EAF726A0084394A /* ViewController.m in Sources */,
 				87F54C1F1EAF726A0084394A /* AppDelegate.m in Sources */,
 				87F54C1C1EAF726A0084394A /* main.m in Sources */,
+				87F54C3D1EB063580084394A /* FeedTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +299,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = C9NT3SAT5M;
 				INFOPLIST_FILE = OnlinicoTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = trand.OnlinicoTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -291,6 +312,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = C9NT3SAT5M;
 				INFOPLIST_FILE = OnlinicoTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = trand.OnlinicoTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
