@@ -8,6 +8,7 @@
 
 #import "XmlParser.h"
 #import "Article.h"
+#import "AppDelegate.h"
 
 @interface XmlParser()
 @property (nonatomic, strong) NSMutableArray *feedArray;
@@ -17,26 +18,34 @@
 
 @implementation XmlParser
 
-- (instancetype)initWithArray: (NSMutableArray *)feedArray {
-    self = [super init];
-    if (self) {
-        self.feedArray = feedArray;
-    }
-    return self;
+- (NSMutableArray *)feedArray {
+    if (!_feedArray) _feedArray = [[NSMutableArray alloc] init];
+    return _feedArray;
 }
 
 - (void)parseXMLFile {
-    NSURL *xmlPath = [[NSURL alloc] initWithString:@"http://www.telegraf.in.ua/rss.xml"];
-
-    // local file
-    //NSURL *xmlPath = [[NSBundle mainBundle] URLForResource:@"rss" withExtension:@"xml"];
-
-    NSXMLParser *parser = [[NSXMLParser alloc] initWithContentsOfURL:xmlPath];
-    parser.delegate = self;
+    NSURL *url = [NSURL URLWithString:@"http://www.telegraf.in.ua/rss.xml"];
     
-    if (![parser parse]){
-        NSLog(@"Parser failed!");
-    }
+    // local file
+    //NSURL *xmlURL = [[NSBundle mainBundle] URLForResource:@"rss" withExtension:@"xml"];
+    
+    // without NSURLSession
+    //NSXMLParser *parser = [[NSXMLParser alloc] initWithContentsOfURL:xmlURL];
+
+    [AppDelegate downloadDataFromURL:url withCompletionHandler:^(NSData *data) {
+        if (data != nil) {
+            
+            NSXMLParser *parser = [[NSXMLParser alloc] initWithData:data];
+            [parser setDelegate:self];
+            BOOL result = [parser parse];
+            if (result) {
+                NSLog(@"Successful parse");
+            } else {
+                NSLog(@"Failed parse");
+            }
+            
+        }
+    }];
 }
 
 - (void)parser:(NSXMLParser *)parser
@@ -79,6 +88,12 @@ qualifiedName:(NSString *)qName {
     }
 
     self.currentElement = nil;
+}
+
+- (void)parserDidEndDocument:(NSXMLParser *)parser {
+    if (self.delegate && [self.delegate conformsToProtocol:@protocol(XmlParserDelegate)]) {
+        [self.delegate xmlParserDidFinishParsingWithResults:self.feedArray];
+    }
 }
 
 @end

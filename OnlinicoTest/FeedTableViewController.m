@@ -7,21 +7,28 @@
 //
 
 #import "FeedTableViewController.h"
-#import "XmlParser.h"
 #import "Article.h"
 
 @interface FeedTableViewController ()
-@property (nonatomic, strong) NSMutableArray *feedArray;
+@property (nonatomic, strong) NSArray *feedArray;
+@property (nonatomic, strong) XmlParser *parser;
 @end
 
 @implementation FeedTableViewController
 
+- (void)xmlParserDidFinishParsingWithResults: (NSArray *)results {
+    self.feedArray = results;
+    [self.tableView reloadData];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.feedArray = [[NSMutableArray alloc] init];
-    XmlParser *parser = [[XmlParser alloc] initWithArray:self.feedArray];
-    [parser parseXMLFile];
+    //self.feedArray = [[NSMutableArray alloc] init];
+    //self.parser = [[XmlParser alloc] initWithArray:self.feedArray];
+    self.parser = [[XmlParser alloc] init];
+    self.parser.delegate = self;
+    [self.parser parseXMLFile];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "XmlParser.h"
 
-@interface FeedTableViewController : UITableViewController
+@interface FeedTableViewController : UITableViewController <XmlParserDelegate>
 
 @end

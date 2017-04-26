@@ -8,7 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol XmlParserDelegate <NSObject>
+- (void)xmlParserDidFinishParsingWithResults: (NSArray *)results;
+@end
+
 @interface XmlParser : NSObject <NSXMLParserDelegate>
-- (instancetype)initWithArray: (NSMutableArray *)feedArray;
+@property (nonatomic, weak) id <XmlParserDelegate> delegate;
 - (void)parseXMLFile;
 @end

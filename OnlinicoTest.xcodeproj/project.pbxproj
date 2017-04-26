@@ -70,6 +70,8 @@
 				87F54C3B1EB063580084394A /* FeedTableViewController.h */,
 				87F54C3C1EB063580084394A /* FeedTableViewController.m */,
 				87F54C371EAF7EE40084394A /* Model */,
+				87F54C1D1EAF726A0084394A /* AppDelegate.h */,
+				87F54C1E1EAF726A0084394A /* AppDelegate.m */,
 				87F54C261EAF726A0084394A /* OnlinicoTest.xcdatamodeld */,
 				87F54C2E1EAF726A0084394A /* Info.plist */,
 				87F54C1A1EAF726A0084394A /* Supporting Files */,
@@ -80,8 +82,6 @@
 		87F54C1A1EAF726A0084394A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				87F54C1D1EAF726A0084394A /* AppDelegate.h */,
-				87F54C1E1EAF726A0084394A /* AppDelegate.m */,
 				87F54C291EAF726A0084394A /* Assets.xcassets */,
 				87F54C2B1EAF726A0084394A /* LaunchScreen.storyboard */,
 				87F54C1B1EAF726A0084394A /* main.m */,
@@ -338,6 +338,7 @@
 				87F54C331EAF726A0084394A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
