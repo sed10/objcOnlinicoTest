@@ -9,14 +9,4 @@
 #import "Article.h"
 
 @implementation Article
-- (instancetype)init {
-    self = [super init];
-    if(self) {
-        self.title = @"";
-        self.shortText = @"";
-        self.category = @"";
-        self.fullText = @"";
-    }
-    return self;
-}
 @end

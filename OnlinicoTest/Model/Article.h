@@ -16,6 +16,4 @@
 @property (nonatomic, strong) NSDate *pubDate;
 @property (nonatomic, strong) NSString *fullText;
 @property (nonatomic, strong) NSURL *imageUrl;
-
-// should i implement initializer ???
 @end
