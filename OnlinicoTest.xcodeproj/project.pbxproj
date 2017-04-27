@@ -42,11 +42,11 @@
 		87F54C651EB1B9660084394A /* NetworkService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetworkService.m; path = Model/NetworkService.m; sourceTree = "<group>"; };
 		87F54C671EB1C9C30084394A /* FeedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedTableViewCell.h; sourceTree = "<group>"; };
 		87F54C681EB1C9C30084394A /* FeedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedTableViewCell.m; sourceTree = "<group>"; };
-		87F54C8D1EB1E7900084394A /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "GTMNSString+HTML.h"; path = "Parsing Utilities/GTMNSString+HTML.h"; sourceTree = "<group>"; };
-		87F54C8E1EB1E7900084394A /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "GTMNSString+HTML.m"; path = "Parsing Utilities/GTMNSString+HTML.m"; sourceTree = "<group>"; };
-		87F54C901EB1E8C60084394A /* GTMDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTMDefines.h; path = "Parsing Utilities/GTMDefines.h"; sourceTree = "<group>"; };
-		87F54C921EB1EFBA0084394A /* NSDate+InternetDateTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+InternetDateTime.h"; path = "Parsing Utilities/NSDate+InternetDateTime.h"; sourceTree = "<group>"; };
-		87F54C931EB1EFBA0084394A /* NSDate+InternetDateTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+InternetDateTime.m"; path = "Parsing Utilities/NSDate+InternetDateTime.m"; sourceTree = "<group>"; };
+		87F54C8D1EB1E7900084394A /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "GTMNSString+HTML.h"; path = "ParsingUtilities/GTMNSString+HTML.h"; sourceTree = "<group>"; };
+		87F54C8E1EB1E7900084394A /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "GTMNSString+HTML.m"; path = "ParsingUtilities/GTMNSString+HTML.m"; sourceTree = "<group>"; };
+		87F54C901EB1E8C60084394A /* GTMDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTMDefines.h; path = ParsingUtilities/GTMDefines.h; sourceTree = "<group>"; };
+		87F54C921EB1EFBA0084394A /* NSDate+InternetDateTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+InternetDateTime.h"; path = "ParsingUtilities/NSDate+InternetDateTime.h"; sourceTree = "<group>"; };
+		87F54C931EB1EFBA0084394A /* NSDate+InternetDateTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+InternetDateTime.m"; path = "ParsingUtilities/NSDate+InternetDateTime.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
