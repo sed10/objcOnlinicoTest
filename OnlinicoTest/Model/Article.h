@@ -15,5 +15,5 @@
 @property (nonatomic, strong) NSString *category;
 @property (nonatomic, strong) NSDate *pubDate;
 @property (nonatomic, strong) NSString *fullText;
-@property (nonatomic, strong) NSURL *imageUrl;
+@property (nonatomic, strong) NSArray *imagesUrls;
 @end

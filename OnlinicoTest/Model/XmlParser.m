@@ -16,16 +16,19 @@
 @property (nonatomic, strong) NSMutableArray *feedArray;
 @property (nonatomic, strong) Article *currentArticle;
 @property (nonatomic, strong) NSMutableString *currentElement;
+@property (nonatomic, strong) NSMutableArray *currentArticleImages;
 @end
 
 @implementation XmlParser
 
+// Lazy init or parserDidStartDocument ???
 - (NSMutableArray *)feedArray {
     if (!_feedArray) _feedArray = [[NSMutableArray alloc] init];
     return _feedArray;
 }
 
 - (void)parseXMLFile {
+    // is this an appropriate place for RSS url?
     NSURL *url = [NSURL URLWithString:@"http://www.telegraf.in.ua/rss.xml"];
     
     // local file
@@ -33,7 +36,7 @@
     
     // without NSURLSession
     //NSXMLParser *parser = [[NSXMLParser alloc] initWithContentsOfURL:xmlURL];
-
+    
     [NetworkService downloadDataFromURL:url withCompletionHandler:^(NSData *data) {
         if (data != nil) {
             
@@ -58,10 +61,16 @@ didStartElement:(NSString *)elementName
         self.currentArticle = [[Article alloc] init];
     } else
     if ([elementName isEqualToString:@"enclosure"]) {
-        //NSString *type = [attributeDict objectForKey:@"type"];
-        //NSString *url = [attributeDict objectForKey:@"url"];
+        NSString *type = [attributeDict objectForKey:@"type"];
+        NSString *url = [attributeDict objectForKey:@"url"];
         
-        //self.currentArticle.imageUrl =
+        if ([type hasPrefix:@"image/"]) {
+            if (!self.currentArticleImages) {
+                self.currentArticleImages = [NSMutableArray arrayWithObject:url];
+            } else {
+                [self.currentArticleImages addObject:url];
+            }
+        }
     }
 }
 
@@ -83,8 +92,10 @@ qualifiedName:(NSString *)qName {
     NSString *currentElementText = [[self.currentElement stringByReplacingOccurrencesOfString:@"\n" withString:@""] gtm_stringByUnescapingFromHTML];
     
     if ([elementName isEqualToString:@"item"]) {
+        self.currentArticle.imagesUrls = self.currentArticleImages;
         [self.feedArray addObject:self.currentArticle];
         self.currentArticle = nil;
+        self.currentArticleImages = nil;
     } else
     if ([elementName isEqualToString:@"title"]) {
         self.currentArticle.title = currentElementText;

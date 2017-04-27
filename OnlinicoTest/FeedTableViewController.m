@@ -17,18 +17,24 @@
 
 @implementation FeedTableViewController
 
+#pragma mark - XmlParserDelegate
+
 - (void)xmlParserDidFinishParsingWithResults: (NSArray *)results {
     self.feedArray = results;
     [self.tableView reloadData];
 }
 
+#pragma mark - VC Lifecycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // init parser
     self.parser = [[XmlParser alloc] init];
     self.parser.delegate = self;
     [self.parser parseXMLFile];
     
+    // automatic row height
     self.tableView.estimatedRowHeight = self.tableView.rowHeight;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     
@@ -41,7 +47,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
+#pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -53,13 +59,16 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"feedCell" forIndexPath:indexPath];
-    
     Article *article = self.feedArray[indexPath.row];
-    //cell.textLabel.text = article.title;
+
+    NSString *cellIdentifier = article.imagesUrls ? @"feedCellWithImage" : @"feedCell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
     if ([cell isKindOfClass:[FeedTableViewCell class]]) {
-        ((FeedTableViewCell *)cell).article = article;
+        FeedTableViewCell *feedCell = (FeedTableViewCell *)cell;
+        feedCell.article = article;
+        [feedCell updateUI];
     }
     
     return cell;

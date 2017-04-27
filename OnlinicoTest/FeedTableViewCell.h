@@ -11,4 +11,5 @@
 
 @interface FeedTableViewCell : UITableViewCell
 @property (nonatomic, strong) Article *article;
+- (void)updateUI;
 @end
