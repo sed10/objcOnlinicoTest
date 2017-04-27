@@ -9,6 +9,8 @@
 #import "XmlParser.h"
 #import "Article.h"
 #import "NetworkService.h"
+#import "GTMNSString+HTML.h"        // module to unescape HTML characters
+#import "NSDate+InternetDateTime.h" // module to convert NSString to NSDate
 
 @interface XmlParser()
 @property (nonatomic, strong) NSMutableArray *feedArray;
@@ -68,7 +70,8 @@ didStartElement:(NSString *)elementName
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
     
     if (!self.currentElement) {
-        self.currentElement = [[NSMutableString alloc] initWithString:string];
+        //self.currentElement = [[NSMutableString alloc] initWithString:string];
+        self.currentElement = [NSMutableString stringWithString:string];
     } else {
         [self.currentElement appendString:string];
     }
@@ -79,12 +82,29 @@ didEndElement:(NSString *)elementName
  namespaceURI:(NSString *)namespaceURI
 qualifiedName:(NSString *)qName {
     
+    NSString *currentElementText = [[self.currentElement stringByReplacingOccurrencesOfString:@"\n" withString:@""] gtm_stringByUnescapingFromHTML];
+    
     if ([elementName isEqualToString:@"item"]) {
         [self.feedArray addObject:self.currentArticle];
         self.currentArticle = nil;
     } else
     if ([elementName isEqualToString:@"title"]) {
-        self.currentArticle.title = [self.currentElement stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+        self.currentArticle.title = currentElementText;
+    } else
+    if ([elementName isEqualToString:@"description"]) {
+        self.currentArticle.shortText = currentElementText;
+    } else
+    if ([elementName isEqualToString:@"category"]) {
+        self.currentArticle.category = currentElementText;
+    } else
+    if ([elementName isEqualToString:@"yandex:full-text"]) {
+        self.currentArticle.fullText = currentElementText;
+    } else
+    if ([elementName isEqualToString:@"link"]) {
+        //self.currentArticle.link = ;
+    } else
+    if ([elementName isEqualToString:@"pubDate"]) {
+        self.currentArticle.pubDate = [NSDate dateFromRFC822String:currentElementText];
     }
 
     self.currentElement = nil;

@@ -7,6 +7,7 @@
 //
 
 #import "FeedTableViewController.h"
+#import "FeedTableViewCell.h"
 #import "Article.h"
 
 @interface FeedTableViewController ()
@@ -24,11 +25,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //self.feedArray = [[NSMutableArray alloc] init];
-    //self.parser = [[XmlParser alloc] initWithArray:self.feedArray];
     self.parser = [[XmlParser alloc] init];
     self.parser.delegate = self;
     [self.parser parseXMLFile];
+    
+    self.tableView.estimatedRowHeight = self.tableView.rowHeight;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -54,7 +56,11 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"feedCell" forIndexPath:indexPath];
     
     Article *article = self.feedArray[indexPath.row];
-    cell.textLabel.text = article.title;
+    //cell.textLabel.text = article.title;
+    
+    if ([cell isKindOfClass:[FeedTableViewCell class]]) {
+        ((FeedTableViewCell *)cell).article = article;
+    }
     
     return cell;
 }

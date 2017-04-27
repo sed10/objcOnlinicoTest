@@ -17,6 +17,9 @@
 		87F54C3A1EAF84950084394A /* XmlParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F54C391EAF84950084394A /* XmlParser.m */; };
 		87F54C3D1EB063580084394A /* FeedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F54C3C1EB063580084394A /* FeedTableViewController.m */; };
 		87F54C661EB1B9660084394A /* NetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F54C651EB1B9660084394A /* NetworkService.m */; };
+		87F54C691EB1C9C30084394A /* FeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F54C681EB1C9C30084394A /* FeedTableViewCell.m */; };
+		87F54C8F1EB1E7900084394A /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F54C8E1EB1E7900084394A /* GTMNSString+HTML.m */; };
+		87F54C941EB1EFBA0084394A /* NSDate+InternetDateTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F54C931EB1EFBA0084394A /* NSDate+InternetDateTime.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +40,13 @@
 		87F54C3C1EB063580084394A /* FeedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedTableViewController.m; sourceTree = "<group>"; };
 		87F54C641EB1B9660084394A /* NetworkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkService.h; sourceTree = "<group>"; };
 		87F54C651EB1B9660084394A /* NetworkService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkService.m; sourceTree = "<group>"; };
+		87F54C671EB1C9C30084394A /* FeedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedTableViewCell.h; sourceTree = "<group>"; };
+		87F54C681EB1C9C30084394A /* FeedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedTableViewCell.m; sourceTree = "<group>"; };
+		87F54C8D1EB1E7900084394A /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+HTML.h"; sourceTree = "<group>"; };
+		87F54C8E1EB1E7900084394A /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+HTML.m"; sourceTree = "<group>"; };
+		87F54C901EB1E8C60084394A /* GTMDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		87F54C921EB1EFBA0084394A /* NSDate+InternetDateTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+InternetDateTime.h"; sourceTree = "<group>"; };
+		87F54C931EB1EFBA0084394A /* NSDate+InternetDateTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+InternetDateTime.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +82,8 @@
 				87F54C231EAF726A0084394A /* Main.storyboard */,
 				87F54C3B1EB063580084394A /* FeedTableViewController.h */,
 				87F54C3C1EB063580084394A /* FeedTableViewController.m */,
+				87F54C671EB1C9C30084394A /* FeedTableViewCell.h */,
+				87F54C681EB1C9C30084394A /* FeedTableViewCell.m */,
 				87F54C371EAF7EE40084394A /* Model */,
 				87F54C1D1EAF726A0084394A /* AppDelegate.h */,
 				87F54C1E1EAF726A0084394A /* AppDelegate.m */,
@@ -101,8 +113,21 @@
 				87F54C391EAF84950084394A /* XmlParser.m */,
 				87F54C641EB1B9660084394A /* NetworkService.h */,
 				87F54C651EB1B9660084394A /* NetworkService.m */,
+				87F54C911EB1E8C90084394A /* Parsing Utilities */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		87F54C911EB1E8C90084394A /* Parsing Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				87F54C901EB1E8C60084394A /* GTMDefines.h */,
+				87F54C8D1EB1E7900084394A /* GTMNSString+HTML.h */,
+				87F54C8E1EB1E7900084394A /* GTMNSString+HTML.m */,
+				87F54C921EB1EFBA0084394A /* NSDate+InternetDateTime.h */,
+				87F54C931EB1EFBA0084394A /* NSDate+InternetDateTime.m */,
+			);
+			name = "Parsing Utilities";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,9 +204,12 @@
 			files = (
 				87F54C361EAF7EE00084394A /* Article.m in Sources */,
 				87F54C3A1EAF84950084394A /* XmlParser.m in Sources */,
+				87F54C8F1EB1E7900084394A /* GTMNSString+HTML.m in Sources */,
 				87F54C281EAF726A0084394A /* OnlinicoTest.xcdatamodeld in Sources */,
+				87F54C941EB1EFBA0084394A /* NSDate+InternetDateTime.m in Sources */,
 				87F54C1F1EAF726A0084394A /* AppDelegate.m in Sources */,
 				87F54C1C1EAF726A0084394A /* main.m in Sources */,
+				87F54C691EB1C9C30084394A /* FeedTableViewCell.m in Sources */,
 				87F54C661EB1B9660084394A /* NetworkService.m in Sources */,
 				87F54C3D1EB063580084394A /* FeedTableViewController.m in Sources */,
 			);
