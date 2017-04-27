@@ -110,7 +110,7 @@ qualifiedName:(NSString *)qName {
         self.currentArticle.fullText = currentElementText;
     } else
     if ([elementName isEqualToString:@"link"]) {
-        self.currentArticle.link = [NSURL URLWithString:currentElementText];
+        self.currentArticle.link = currentElementText;
     } else
     if ([elementName isEqualToString:@"pubDate"]) {
         self.currentArticle.pubDate = [NSDate dateFromRFC822String:currentElementText];

@@ -219,26 +219,64 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TnR-fN-WBa">
-                                <rect key="frame" x="16" y="72" width="343" height="21"/>
+                                <rect key="frame" x="16" y="94" width="343" height="21"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wQt-gK-v84">
+                                <rect key="frame" x="16" y="123" width="343" height="20.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xk-Mi-srE">
+                                <rect key="frame" x="16" y="72" width="26.5" height="14.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AY8-V4-8mL">
+                                <rect key="frame" x="307" y="72" width="52" height="14.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Link" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JgX-21-Jst">
+                                <rect key="frame" x="16" y="151.5" width="23.5" height="15"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="TnR-fN-WBa" firstAttribute="top" secondItem="acy-Za-Z97" secondAttribute="bottom" constant="8" symbolic="YES" id="1IU-F7-Lmn"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="TnR-fN-WBa" secondAttribute="leading" id="EGK-TG-Duu"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="TnR-fN-WBa" secondAttribute="trailing" id="jV9-7t-Mys"/>
+                            <constraint firstItem="TnR-fN-WBa" firstAttribute="leading" secondItem="9ov-GY-akD" secondAttribute="leadingMargin" id="2RN-l3-oef"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wQt-gK-v84" secondAttribute="trailing" id="8WN-if-s2k"/>
+                            <constraint firstItem="wQt-gK-v84" firstAttribute="top" secondItem="TnR-fN-WBa" secondAttribute="bottom" constant="8" symbolic="YES" id="BaF-uc-6QJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TnR-fN-WBa" secondAttribute="trailing" id="EQK-19-LVl"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="wQt-gK-v84" secondAttribute="leading" id="MP7-qf-d1c"/>
+                            <constraint firstItem="6xk-Mi-srE" firstAttribute="top" secondItem="acy-Za-Z97" secondAttribute="bottom" constant="8" symbolic="YES" id="SQG-Jb-osM"/>
+                            <constraint firstItem="AY8-V4-8mL" firstAttribute="top" secondItem="acy-Za-Z97" secondAttribute="bottom" constant="8" symbolic="YES" id="Xdn-9v-ceO"/>
+                            <constraint firstItem="6xk-Mi-srE" firstAttribute="baseline" secondItem="AY8-V4-8mL" secondAttribute="baseline" id="coW-vk-aTb"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="JgX-21-Jst" secondAttribute="leading" id="pyl-W8-FAc"/>
+                            <constraint firstItem="JgX-21-Jst" firstAttribute="top" secondItem="wQt-gK-v84" secondAttribute="bottom" constant="8" symbolic="YES" id="rOB-8y-aLh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AY8-V4-8mL" secondAttribute="trailing" id="tVm-VY-tLy"/>
+                            <constraint firstItem="TnR-fN-WBa" firstAttribute="top" secondItem="6xk-Mi-srE" secondAttribute="bottom" constant="8" symbolic="YES" id="tpP-4W-6rC"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="6xk-Mi-srE" secondAttribute="leading" id="wEt-Tk-QiI"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="categoryLabel" destination="AY8-V4-8mL" id="Afp-lg-HFq"/>
+                        <outlet property="dateLabel" destination="6xk-Mi-srE" id="pNp-6A-Z41"/>
+                        <outlet property="linkLabel" destination="JgX-21-Jst" id="Skd-wN-Alb"/>
+                        <outlet property="textLabel" destination="wQt-gK-v84" id="epq-0w-qGB"/>
                         <outlet property="titleLabel" destination="TnR-fN-WBa" id="val-me-txb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tFx-ij-ap0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1852" y="-467"/>
+            <point key="canvasLocation" x="1852" y="-467.3163418290855"/>
         </scene>
         <!--TELEGRAF.IN.UA-->
         <scene sceneID="pBe-QM-7un">
@@ -280,6 +318,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="WNs-mT-i2t"/>
+        <segue reference="z7H-w9-iEO"/>
     </inferredMetricsTieBreakers>
 </document>

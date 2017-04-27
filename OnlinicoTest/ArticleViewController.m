@@ -11,6 +11,10 @@
 @interface ArticleViewController ()
 @property (nonatomic, strong) Article *article;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *textLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *categoryLabel;
+@property (weak, nonatomic) IBOutlet UILabel *linkLabel;
 @end
 
 @implementation ArticleViewController
@@ -25,7 +29,11 @@
 
 - (void)updateUI {
     if (self.article) {
+        self.navigationItem.title = self.article.category;
         self.titleLabel.text = self.article.title;
+        self.textLabel.text = self.article.fullText;
+        self.categoryLabel.text = self.article.category;
+        self.linkLabel.text = self.article.link;
     }
 }
 

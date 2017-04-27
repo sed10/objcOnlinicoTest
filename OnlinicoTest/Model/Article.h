@@ -10,7 +10,7 @@
 
 @interface Article : NSObject
 @property (nonatomic, strong) NSString *title;
-@property (nonatomic, strong) NSURL *link;
+@property (nonatomic, strong) NSString *link;
 @property (nonatomic, strong) NSString *shortText;
 @property (nonatomic, strong) NSString *category;
 @property (nonatomic, strong) NSDate *pubDate;
