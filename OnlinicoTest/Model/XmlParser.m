@@ -40,9 +40,7 @@
             NSXMLParser *parser = [[NSXMLParser alloc] initWithData:data];
             [parser setDelegate:self];
             BOOL result = [parser parse];
-            if (result) {
-                NSLog(@"Successful parse");
-            } else {
+            if (!result) {
                 NSLog(@"Failed parse");
             }
             
@@ -101,7 +99,7 @@ qualifiedName:(NSString *)qName {
         self.currentArticle.fullText = currentElementText;
     } else
     if ([elementName isEqualToString:@"link"]) {
-        //self.currentArticle.link = ;
+        self.currentArticle.link = [NSURL URLWithString:currentElementText];
     } else
     if ([elementName isEqualToString:@"pubDate"]) {
         self.currentArticle.pubDate = [NSDate dateFromRFC822String:currentElementText];
