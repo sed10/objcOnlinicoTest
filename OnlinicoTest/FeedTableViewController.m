@@ -9,6 +9,7 @@
 #import "FeedTableViewController.h"
 #import "FeedTableViewCell.h"
 #import "Article.h"
+#import "ArticleViewController.h"
 
 @interface FeedTableViewController ()
 @property (nonatomic, strong) NSArray *feedArray;
@@ -74,14 +75,24 @@
     return cell;
 }
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    // CHECK THIS CODE!!!
+    if ([segue.identifier hasPrefix:@"showArticle"]) {
+        if ([segue.destinationViewController isKindOfClass:[ArticleViewController class]]) {
+            if ([sender isKindOfClass:[FeedTableViewCell class]]) {
+                NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+                ArticleViewController *articleVC = (ArticleViewController *)segue.destinationViewController;
+                Article *selectedArticle = self.feedArray[indexPath.row];
+                [articleVC setNewArticle:selectedArticle];
+            }
+        }
+    }
 }
-*/
 
 @end

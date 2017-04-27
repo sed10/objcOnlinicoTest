@@ -20,20 +20,20 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="XHy-RB-TB4" kind="relationship" relationship="viewControllers" id="aK3-qk-ucM"/>
-                        <segue destination="kN0-Aj-VZK" kind="relationship" relationship="viewControllers" id="TR7-7W-Bh4"/>
+                        <segue destination="uN1-TZ-boJ" kind="relationship" relationship="viewControllers" id="aK3-qk-ucM"/>
+                        <segue destination="wL4-FP-Drw" kind="relationship" relationship="viewControllers" id="TR7-7W-Bh4"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NhZ-lj-S9g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-778" y="-142"/>
         </scene>
-        <!--TODO LIST-->
+        <!--Table View Controller-->
         <scene sceneID="eJl-yZ-y6W">
             <objects>
                 <tableViewController id="kN0-Aj-VZK" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="BIg-ps-WPC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -52,18 +52,18 @@
                         </connections>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title="TODO LIST" id="wRd-8z-j7V"/>
+                    <navigationItem key="navigationItem" id="Czf-zv-0OQ"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mx3-YG-koN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="173" y="188"/>
+            <point key="canvasLocation" x="1111.2" y="187.55622188905548"/>
         </scene>
         <!--TELEGRAF.IN.UA-->
         <scene sceneID="RVE-KN-Ubt">
             <objects>
                 <tableViewController id="XHy-RB-TB4" customClass="FeedTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="217" sectionHeaderHeight="28" sectionFooterHeight="28" id="k71-kS-Us9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -120,6 +120,7 @@
                                     <outlet property="dateLabel" destination="xpU-2K-08u" id="ZtQ-R9-Q2x"/>
                                     <outlet property="descriptionLabel" destination="6UC-Zo-SH1" id="1MP-en-VxT"/>
                                     <outlet property="titleLabel" destination="uAc-2w-Icl" id="2fG-Z3-1vj"/>
+                                    <segue destination="Mzk-xd-cah" kind="show" identifier="showArticle" id="z7H-w9-iEO"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="feedCellWithImage" rowHeight="186" id="RL5-HE-BPN" customClass="FeedTableViewCell">
@@ -136,14 +137,14 @@
                                                 <constraint firstAttribute="height" constant="96" id="opv-ss-Yoy"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZE2-JW-2Df">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="300" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZE2-JW-2Df">
                                             <rect key="frame" x="112" y="8" width="255" height="21"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nwf-WT-kh5">
-                                            <rect key="frame" x="112" y="37" width="255" height="120"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nwf-WT-kh5">
+                                            <rect key="frame" x="112" y="37" width="255" height="20.5"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -166,13 +167,15 @@
                                         <constraint firstAttribute="topMargin" secondItem="ZE2-JW-2Df" secondAttribute="top" id="4lt-UO-fq3"/>
                                         <constraint firstItem="iVH-an-UbJ" firstAttribute="baseline" secondItem="xwB-mg-Sl0" secondAttribute="baseline" id="6p6-wR-hsW"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="iVH-an-UbJ" secondAttribute="bottom" id="9hS-i3-aUg"/>
+                                        <constraint firstItem="iVH-an-UbJ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="umn-co-sne" secondAttribute="bottom" constant="8" symbolic="YES" id="F6Y-Xn-Dex"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="iVH-an-UbJ" secondAttribute="leading" id="IfO-0d-1N1"/>
-                                        <constraint firstItem="xwB-mg-Sl0" firstAttribute="top" secondItem="nwf-WT-kh5" secondAttribute="bottom" constant="8" symbolic="YES" id="Kh2-lP-MfY"/>
+                                        <constraint firstItem="xwB-mg-Sl0" firstAttribute="top" relation="greaterThanOrEqual" secondItem="umn-co-sne" secondAttribute="bottom" constant="8" symbolic="YES" id="K5n-3S-236"/>
+                                        <constraint firstItem="xwB-mg-Sl0" firstAttribute="top" relation="greaterThanOrEqual" secondItem="nwf-WT-kh5" secondAttribute="bottom" constant="8" symbolic="YES" id="Kh2-lP-MfY"/>
                                         <constraint firstItem="ZE2-JW-2Df" firstAttribute="leading" secondItem="umn-co-sne" secondAttribute="trailing" constant="8" symbolic="YES" id="Pw4-d7-TJ7"/>
                                         <constraint firstItem="nwf-WT-kh5" firstAttribute="width" secondItem="ZE2-JW-2Df" secondAttribute="width" id="X7G-UZ-3bI"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="umn-co-sne" secondAttribute="leading" id="ap0-5d-gRk"/>
                                         <constraint firstAttribute="topMargin" secondItem="umn-co-sne" secondAttribute="top" id="eOW-yz-1LV"/>
-                                        <constraint firstItem="iVH-an-UbJ" firstAttribute="top" secondItem="nwf-WT-kh5" secondAttribute="bottom" constant="8" symbolic="YES" id="fwr-yx-tbL"/>
+                                        <constraint firstItem="iVH-an-UbJ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="nwf-WT-kh5" secondAttribute="bottom" constant="8" symbolic="YES" id="fwr-yx-tbL"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="ZE2-JW-2Df" secondAttribute="trailing" id="r6s-ik-kFx"/>
                                         <constraint firstItem="nwf-WT-kh5" firstAttribute="top" secondItem="ZE2-JW-2Df" secondAttribute="bottom" constant="8" symbolic="YES" id="rOG-tl-JXF"/>
                                         <constraint firstItem="nwf-WT-kh5" firstAttribute="leading" secondItem="umn-co-sne" secondAttribute="trailing" constant="8" symbolic="YES" id="xsg-f6-nxa"/>
@@ -186,6 +189,7 @@
                                     <outlet property="dateLabel" destination="iVH-an-UbJ" id="n93-xR-0yO"/>
                                     <outlet property="descriptionLabel" destination="nwf-WT-kh5" id="PiM-DZ-Tbv"/>
                                     <outlet property="titleLabel" destination="ZE2-JW-2Df" id="BzU-8n-UuC"/>
+                                    <segue destination="Mzk-xd-cah" kind="show" identifier="showArticleWithImages" id="WNs-mT-i2t"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -195,12 +199,87 @@
                         </connections>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title="TELEGRAF.IN.UA" id="org-FK-O48"/>
+                    <navigationItem key="navigationItem" title="TELEGRAF.IN.UA" id="D5Z-aD-iCO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bI8-wc-4PH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1111.2" y="-468.21589205397305"/>
+        </scene>
+        <!--Article View Controller-->
+        <scene sceneID="hQe-Em-b7j">
+            <objects>
+                <viewController id="Mzk-xd-cah" customClass="ArticleViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="acy-Za-Z97"/>
+                        <viewControllerLayoutGuide type="bottom" id="ABr-Zj-7ME"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9ov-GY-akD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TnR-fN-WBa">
+                                <rect key="frame" x="16" y="72" width="343" height="21"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TnR-fN-WBa" firstAttribute="top" secondItem="acy-Za-Z97" secondAttribute="bottom" constant="8" symbolic="YES" id="1IU-F7-Lmn"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="TnR-fN-WBa" secondAttribute="leading" id="EGK-TG-Duu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TnR-fN-WBa" secondAttribute="trailing" id="jV9-7t-Mys"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="titleLabel" destination="TnR-fN-WBa" id="val-me-txb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tFx-ij-ap0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1852" y="-467"/>
+        </scene>
+        <!--TELEGRAF.IN.UA-->
+        <scene sceneID="pBe-QM-7un">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uN1-TZ-boJ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="TELEGRAF.IN.UA" id="org-FK-O48"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7xe-tY-Khe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="XHy-RB-TB4" kind="relationship" relationship="rootViewController" id="81o-c4-bTL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PGJ-17-ZGu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="172" y="-468.21589205397305"/>
         </scene>
+        <!--TODO LIST-->
+        <scene sceneID="JD5-89-t9X">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wL4-FP-Drw" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="TODO LIST" id="wRd-8z-j7V"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tLg-SC-ptt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="kN0-Aj-VZK" kind="relationship" relationship="rootViewController" id="6js-mz-UdU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FLN-dd-TaQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="172" y="187.55622188905548"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="WNs-mT-i2t"/>
+    </inferredMetricsTieBreakers>
 </document>

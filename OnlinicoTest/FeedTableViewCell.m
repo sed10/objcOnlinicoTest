@@ -19,6 +19,8 @@
 @implementation FeedTableViewCell
 
 - (void)updateUI {
+    if (!self.article) return;
+    
     // text
     self.titleLabel.text = self.article.title;
     self.descriptionLabel.text = self.article.shortText;
