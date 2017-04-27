@@ -8,7 +8,7 @@
 
 #import "XmlParser.h"
 #import "Article.h"
-#import "AppDelegate.h"
+#import "NetworkService.h"
 
 @interface XmlParser()
 @property (nonatomic, strong) NSMutableArray *feedArray;
@@ -32,7 +32,7 @@
     // without NSURLSession
     //NSXMLParser *parser = [[NSXMLParser alloc] initWithContentsOfURL:xmlURL];
 
-    [AppDelegate downloadDataFromURL:url withCompletionHandler:^(NSData *data) {
+    [NetworkService downloadDataFromURL:url withCompletionHandler:^(NSData *data) {
         if (data != nil) {
             
             NSXMLParser *parser = [[NSXMLParser alloc] initWithData:data];

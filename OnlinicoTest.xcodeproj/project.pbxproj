@@ -16,6 +16,7 @@
 		87F54C361EAF7EE00084394A /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F54C351EAF7EE00084394A /* Article.m */; };
 		87F54C3A1EAF84950084394A /* XmlParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F54C391EAF84950084394A /* XmlParser.m */; };
 		87F54C3D1EB063580084394A /* FeedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F54C3C1EB063580084394A /* FeedTableViewController.m */; };
+		87F54C661EB1B9660084394A /* NetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F54C651EB1B9660084394A /* NetworkService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,8 @@
 		87F54C391EAF84950084394A /* XmlParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XmlParser.m; path = Model/XmlParser.m; sourceTree = "<group>"; };
 		87F54C3B1EB063580084394A /* FeedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedTableViewController.h; sourceTree = "<group>"; };
 		87F54C3C1EB063580084394A /* FeedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedTableViewController.m; sourceTree = "<group>"; };
+		87F54C641EB1B9660084394A /* NetworkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkService.h; sourceTree = "<group>"; };
+		87F54C651EB1B9660084394A /* NetworkService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkService.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +99,8 @@
 				87F54C351EAF7EE00084394A /* Article.m */,
 				87F54C381EAF84950084394A /* XmlParser.h */,
 				87F54C391EAF84950084394A /* XmlParser.m */,
+				87F54C641EB1B9660084394A /* NetworkService.h */,
+				87F54C651EB1B9660084394A /* NetworkService.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -177,6 +182,7 @@
 				87F54C281EAF726A0084394A /* OnlinicoTest.xcdatamodeld in Sources */,
 				87F54C1F1EAF726A0084394A /* AppDelegate.m in Sources */,
 				87F54C1C1EAF726A0084394A /* main.m in Sources */,
+				87F54C661EB1B9660084394A /* NetworkService.m in Sources */,
 				87F54C3D1EB063580084394A /* FeedTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
