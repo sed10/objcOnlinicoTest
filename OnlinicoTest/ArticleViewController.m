@@ -30,7 +30,7 @@
 
 - (void)updateUI {
     if (self.article) {
-        self.navigationItem.title = self.article.category;
+        //self.navigationItem.title = self.article.category;
         self.titleLabel.text = self.article.title;
         self.textLabel.text = self.article.fullText;
         self.categoryLabel.text = self.article.category;

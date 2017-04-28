@@ -13,21 +13,28 @@
 #import "NSDate+InternetDateTime.h" // module to convert NSString to NSDate
 
 @interface XmlParser()
-@property (nonatomic, strong) NSMutableArray *feedArray;
+@property (nonatomic, strong) NSMutableArray *articles;
 @property (nonatomic, strong) Article *currentArticle;
-@property (nonatomic, strong) NSMutableString *currentElement;
+@property (nonatomic, strong) NSMutableString *currentElementText;
 @property (nonatomic, strong) NSMutableArray *currentArticleImages;
+@property (nonatomic, strong) NSDate *lastArticleDate;
 @end
 
 @implementation XmlParser
 
-// Lazy init or parserDidStartDocument ???
-- (NSMutableArray *)feedArray {
-    if (!_feedArray) _feedArray = [[NSMutableArray alloc] init];
-    return _feedArray;
+// returns new XmlParser, which only fetches new articles since last fetched article
+- (XmlParser *)newer {
+    if (self.lastArticleDate) {
+        XmlParser *newXmlParser = [[XmlParser alloc] init];
+        newXmlParser.sinceDate = self.lastArticleDate;
+        return newXmlParser;
+    }
+    return self;
 }
 
-- (void)parseXMLFile {
+// fetches articles and invokes handler for them
+- (void)fetchArticlesWithHandler:(void (^) (NSArray *articles))handler {
+    
     // is this an appropriate place for RSS url?
     NSURL *url = [NSURL URLWithString:@"http://www.telegraf.in.ua/rss.xml"];
     
@@ -37,18 +44,28 @@
     // without NSURLSession
     //NSXMLParser *parser = [[NSXMLParser alloc] initWithContentsOfURL:xmlURL];
     
+    // parse XML
     [NetworkUtilities downloadDataFromURL:url withCompletionHandler:^(NSData *data) {
         if (data != nil) {
-            
             NSXMLParser *parser = [[NSXMLParser alloc] initWithData:data];
             [parser setDelegate:self];
             BOOL result = [parser parse];
             if (!result) {
-                NSLog(@"Failed parse");
+                NSLog(@"Parsing is failed or aborted");
             }
-            
         }
+        // handle articles array
+        handler(self.articles);
     }];
+}
+
+#pragma mark - NSXMLParserDelegate
+
+- (void)parserDidStartDocument:(NSXMLParser *)parser {
+    if (!self.articles) {
+        self.articles = [[NSMutableArray alloc] init];
+    }
+    [self.articles removeAllObjects];
 }
 
 - (void)parser:(NSXMLParser *)parser
@@ -58,9 +75,14 @@ didStartElement:(NSString *)elementName
     attributes:(NSDictionary<NSString *,NSString *> *)attributeDict {
     
     if ([elementName isEqualToString:@"item"]) {
+        // item - new article
         self.currentArticle = [[Article alloc] init];
     } else
     if ([elementName isEqualToString:@"enclosure"]) {
+        // enclosure - enclosed files
+        // <enclosure url="fileurl" type="image/jpeg"/>
+        // types: "image/jpeg", "image/png"
+        
         NSString *type = [attributeDict objectForKey:@"type"];
         NSString *url = [attributeDict objectForKey:@"url"];
         
@@ -76,24 +98,25 @@ didStartElement:(NSString *)elementName
 
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
     
-    if (!self.currentElement) {
+    if (!self.currentElementText) {
         //self.currentElement = [[NSMutableString alloc] initWithString:string];
-        self.currentElement = [NSMutableString stringWithString:string];
+        self.currentElementText = [NSMutableString stringWithString:string];
     } else {
-        [self.currentElement appendString:string];
+        [self.currentElementText appendString:string];
     }
 }
 
--(void)parser:(NSXMLParser *)parser
+- (void)parser:(NSXMLParser *)parser
 didEndElement:(NSString *)elementName
  namespaceURI:(NSString *)namespaceURI
 qualifiedName:(NSString *)qName {
     
-    NSString *currentElementText = [[self.currentElement stringByReplacingOccurrencesOfString:@"\n" withString:@""] gtm_stringByUnescapingFromHTML];
+    NSString *currentElementText = [[self.currentElementText stringByReplacingOccurrencesOfString:@"\n" withString:@""] gtm_stringByUnescapingFromHTML];
     
     if ([elementName isEqualToString:@"item"]) {
+        // end of current article
         self.currentArticle.imagesUrls = self.currentArticleImages;
-        [self.feedArray addObject:self.currentArticle];
+        [self.articles addObject:self.currentArticle];
         self.currentArticle = nil;
         self.currentArticleImages = nil;
     } else
@@ -113,16 +136,27 @@ qualifiedName:(NSString *)qName {
         self.currentArticle.link = currentElementText;
     } else
     if ([elementName isEqualToString:@"pubDate"]) {
-        self.currentArticle.pubDate = [NSDate dateFromRFC822String:currentElementText];
+        NSDate *curArticleDate = [NSDate dateFromRFC822String:currentElementText];
+        
+        // abort parsing if the article's date is earlier than fetching date
+        if (self.sinceDate && self.sinceDate>=curArticleDate) {
+            self.currentArticle = nil;
+            self.currentArticleImages = nil;
+            [parser abortParsing];
+        } else {
+            self.currentArticle.pubDate = curArticleDate;
+            // fix latest date
+            self.lastArticleDate = self.lastArticleDate ? [self.lastArticleDate laterDate:curArticleDate] : curArticleDate;
+        }
     }
 
-    self.currentElement = nil;
+    self.currentElementText = nil;
 }
 
 - (void)parserDidEndDocument:(NSXMLParser *)parser {
-    if (self.delegate && [self.delegate conformsToProtocol:@protocol(XmlParserDelegate)]) {
-        [self.delegate xmlParserDidFinishParsingWithResults:self.feedArray];
-    }
+//    if (self.delegate && [self.delegate conformsToProtocol:@protocol(XmlParserDelegate)]) {
+//        [self.delegate xmlParserDidFinishParsingWithResults:self.articles];
+//    }
 }
 
 @end
