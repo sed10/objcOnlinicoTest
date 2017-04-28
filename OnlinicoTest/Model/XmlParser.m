@@ -8,7 +8,7 @@
 
 #import "XmlParser.h"
 #import "Article.h"
-#import "NetworkService.h"
+#import "NetworkUtilities.h"
 #import "GTMNSString+HTML.h"        // module to unescape HTML characters
 #import "NSDate+InternetDateTime.h" // module to convert NSString to NSDate
 
@@ -37,7 +37,7 @@
     // without NSURLSession
     //NSXMLParser *parser = [[NSXMLParser alloc] initWithContentsOfURL:xmlURL];
     
-    [NetworkService downloadDataFromURL:url withCompletionHandler:^(NSData *data) {
+    [NetworkUtilities downloadDataFromURL:url withCompletionHandler:^(NSData *data) {
         if (data != nil) {
             
             NSXMLParser *parser = [[NSXMLParser alloc] initWithData:data];

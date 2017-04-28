@@ -1,5 +1,5 @@
 //
-//  NetworkService.h
+//  NetworkUtilities.h
 //  OnlinicoTest
 //
 //  Created by Andrij Trubchanin on 4/27/17.
@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NetworkService : NSObject
+@interface NetworkUtilities : NSObject
 + (void)downloadDataFromURL:(NSURL *)url withCompletionHandler:(void(^)(NSData *data))completionHandler;
 @end

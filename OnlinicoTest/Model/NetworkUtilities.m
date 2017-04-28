@@ -1,14 +1,14 @@
 //
-//  NetworkService.m
+//  NetworkUtilities.m
 //  OnlinicoTest
 //
 //  Created by Andrij Trubchanin on 4/27/17.
 //  Copyright © 2017 Andrij Trubchanin. All rights reserved.
 //
 
-#import "NetworkService.h"
+#import "NetworkUtilities.h"
 
-@implementation NetworkService
+@implementation NetworkUtilities
 
 + (void)downloadDataFromURL:(NSURL *)url withCompletionHandler:(void (^)(NSData *))completionHandler{
     // Instantiate a session configuration object.

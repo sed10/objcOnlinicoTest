@@ -16,7 +16,7 @@
 		87F54C361EAF7EE00084394A /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F54C351EAF7EE00084394A /* Article.m */; };
 		87F54C3A1EAF84950084394A /* XmlParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F54C391EAF84950084394A /* XmlParser.m */; };
 		87F54C3D1EB063580084394A /* FeedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F54C3C1EB063580084394A /* FeedTableViewController.m */; };
-		87F54C661EB1B9660084394A /* NetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F54C651EB1B9660084394A /* NetworkService.m */; };
+		87F54C661EB1B9660084394A /* NetworkUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F54C651EB1B9660084394A /* NetworkUtilities.m */; };
 		87F54C691EB1C9C30084394A /* FeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F54C681EB1C9C30084394A /* FeedTableViewCell.m */; };
 		87F54C8F1EB1E7900084394A /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F54C8E1EB1E7900084394A /* GTMNSString+HTML.m */; };
 		87F54C941EB1EFBA0084394A /* NSDate+InternetDateTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F54C931EB1EFBA0084394A /* NSDate+InternetDateTime.m */; };
@@ -40,8 +40,8 @@
 		87F54C391EAF84950084394A /* XmlParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XmlParser.m; path = Model/XmlParser.m; sourceTree = "<group>"; };
 		87F54C3B1EB063580084394A /* FeedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedTableViewController.h; sourceTree = "<group>"; };
 		87F54C3C1EB063580084394A /* FeedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedTableViewController.m; sourceTree = "<group>"; };
-		87F54C641EB1B9660084394A /* NetworkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkService.h; path = Model/NetworkService.h; sourceTree = "<group>"; };
-		87F54C651EB1B9660084394A /* NetworkService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetworkService.m; path = Model/NetworkService.m; sourceTree = "<group>"; };
+		87F54C641EB1B9660084394A /* NetworkUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkUtilities.h; path = Model/NetworkUtilities.h; sourceTree = "<group>"; };
+		87F54C651EB1B9660084394A /* NetworkUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetworkUtilities.m; path = Model/NetworkUtilities.m; sourceTree = "<group>"; };
 		87F54C671EB1C9C30084394A /* FeedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedTableViewCell.h; sourceTree = "<group>"; };
 		87F54C681EB1C9C30084394A /* FeedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedTableViewCell.m; sourceTree = "<group>"; };
 		87F54C8D1EB1E7900084394A /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "GTMNSString+HTML.h"; path = "ParsingUtilities/GTMNSString+HTML.h"; sourceTree = "<group>"; };
@@ -119,11 +119,11 @@
 				87F54C351EAF7EE00084394A /* Article.m */,
 				87F54C381EAF84950084394A /* XmlParser.h */,
 				87F54C391EAF84950084394A /* XmlParser.m */,
-				87F54C641EB1B9660084394A /* NetworkService.h */,
-				87F54C651EB1B9660084394A /* NetworkService.m */,
 				87F54C911EB1E8C90084394A /* Parsing Utilities */,
 				87F54C9B1EB311C60084394A /* FormatUtilities.h */,
 				87F54C9C1EB311C60084394A /* FormatUtilities.m */,
+				87F54C641EB1B9660084394A /* NetworkUtilities.h */,
+				87F54C651EB1B9660084394A /* NetworkUtilities.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -223,7 +223,7 @@
 				87F54C1F1EAF726A0084394A /* AppDelegate.m in Sources */,
 				87F54C1C1EAF726A0084394A /* main.m in Sources */,
 				87F54C691EB1C9C30084394A /* FeedTableViewCell.m in Sources */,
-				87F54C661EB1B9660084394A /* NetworkService.m in Sources */,
+				87F54C661EB1B9660084394A /* NetworkUtilities.m in Sources */,
 				87F54C3D1EB063580084394A /* FeedTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
