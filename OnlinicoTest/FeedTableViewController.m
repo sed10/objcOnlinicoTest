@@ -92,8 +92,7 @@
     
     if ([cell isKindOfClass:[FeedTableViewCell class]]) {
         FeedTableViewCell *feedCell = (FeedTableViewCell *)cell;
-        feedCell.article = article;
-        [feedCell updateUI];
+        [feedCell setNewArticle:article];
     }
     
     return cell;

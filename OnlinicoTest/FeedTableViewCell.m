@@ -10,6 +10,7 @@
 #import "FormatUtilities.h"
 
 @interface FeedTableViewCell()
+@property (nonatomic, strong) Article *article;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
@@ -18,6 +19,14 @@
 @end
 
 @implementation FeedTableViewCell
+
+- (void)setNewArticle:(Article *)newArticle
+{
+    if (self.article != newArticle) {
+        self.article = newArticle;
+        [self updateUI];
+    }
+}
 
 - (void)updateUI {
     if (!self.article) return;

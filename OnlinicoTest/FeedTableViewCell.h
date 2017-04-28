@@ -10,6 +10,5 @@
 #import "Article.h"
 
 @interface FeedTableViewCell : UITableViewCell
-@property (nonatomic, strong) Article *article;
-- (void)updateUI;
+- (void)setNewArticle:(Article *)newArticle;
 @end
