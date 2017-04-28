@@ -7,6 +7,7 @@
 //
 
 #import "FeedTableViewCell.h"
+#import "FormatUtilities.h"
 
 @interface FeedTableViewCell()
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
@@ -27,13 +28,7 @@
     self.categoryLabel.text = self.article.category;
     
     // date
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"uk_UA"];
-    [dateFormatter setLocale:locale];
-    
-    [dateFormatter setDateStyle:NSDateFormatterShortStyle];
-    [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
-    self.dateLabel.text = [dateFormatter stringFromDate:self.article.pubDate];
+    self.dateLabel.text = [[FormatUtilities dateFormatter] stringFromDate:self.article.pubDate];
     
     // CHECK THIS CODE!!!
     // image
