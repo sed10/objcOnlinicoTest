@@ -22,6 +22,7 @@
 		87F54C941EB1EFBA0084394A /* NSDate+InternetDateTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F54C931EB1EFBA0084394A /* NSDate+InternetDateTime.m */; };
 		87F54C9A1EB21F250084394A /* ArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F54C991EB21F250084394A /* ArticleViewController.m */; };
 		87F54C9D1EB311C60084394A /* FormatUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F54C9C1EB311C60084394A /* FormatUtilities.m */; };
+		87F54CA31EB365F20084394A /* TasksTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F54CA21EB365F20084394A /* TasksTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,8 @@
 		87F54C991EB21F250084394A /* ArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleViewController.m; sourceTree = "<group>"; };
 		87F54C9B1EB311C60084394A /* FormatUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FormatUtilities.h; path = Model/FormatUtilities.h; sourceTree = "<group>"; };
 		87F54C9C1EB311C60084394A /* FormatUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FormatUtilities.m; path = Model/FormatUtilities.m; sourceTree = "<group>"; };
+		87F54CA11EB365F20084394A /* TasksTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TasksTableViewController.h; sourceTree = "<group>"; };
+		87F54CA21EB365F20084394A /* TasksTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TasksTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +95,10 @@
 				87F54C681EB1C9C30084394A /* FeedTableViewCell.m */,
 				87F54C981EB21F250084394A /* ArticleViewController.h */,
 				87F54C991EB21F250084394A /* ArticleViewController.m */,
+				87F54CA11EB365F20084394A /* TasksTableViewController.h */,
+				87F54CA21EB365F20084394A /* TasksTableViewController.m */,
+				87F54C1D1EAF726A0084394A /* AppDelegate.h */,
+				87F54C1E1EAF726A0084394A /* AppDelegate.m */,
 				87F54C371EAF7EE40084394A /* Model */,
 				87F54C1A1EAF726A0084394A /* Supporting Files */,
 			);
@@ -101,9 +108,6 @@
 		87F54C1A1EAF726A0084394A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				87F54C261EAF726A0084394A /* OnlinicoTest.xcdatamodeld */,
-				87F54C1D1EAF726A0084394A /* AppDelegate.h */,
-				87F54C1E1EAF726A0084394A /* AppDelegate.m */,
 				87F54C2E1EAF726A0084394A /* Info.plist */,
 				87F54C291EAF726A0084394A /* Assets.xcassets */,
 				87F54C2B1EAF726A0084394A /* LaunchScreen.storyboard */,
@@ -115,6 +119,7 @@
 		87F54C371EAF7EE40084394A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				87F54C261EAF726A0084394A /* OnlinicoTest.xcdatamodeld */,
 				87F54C341EAF7EE00084394A /* Article.h */,
 				87F54C351EAF7EE00084394A /* Article.m */,
 				87F54C381EAF84950084394A /* XmlParser.h */,
@@ -224,6 +229,7 @@
 				87F54C1C1EAF726A0084394A /* main.m in Sources */,
 				87F54C691EB1C9C30084394A /* FeedTableViewCell.m in Sources */,
 				87F54C661EB1B9660084394A /* NetworkUtilities.m in Sources */,
+				87F54CA31EB365F20084394A /* TasksTableViewController.m in Sources */,
 				87F54C3D1EB063580084394A /* FeedTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
