@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16E195" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
-    <entity name="TodoTask" representedClassName="TodoTask" syncable="YES" codeGenerationType="class">
+    <entity name="TodoTask" representedClassName="TodoTask" syncable="YES" codeGenerationType="category">
         <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="status" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TodoTaskStatus" inverseName="tasks" inverseEntity="TodoTaskStatus" syncable="YES"/>
-    </entity>
-    <entity name="TodoTaskStatus" representedClassName="TodoTaskStatus" syncable="YES" codeGenerationType="class">
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="tasks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TodoTask" inverseName="status" inverseEntity="TodoTask" syncable="YES"/>
     </entity>
     <elements>
-        <element name="TodoTask" positionX="-63" positionY="-18" width="128" height="118"/>
-        <element name="TodoTaskStatus" positionX="124" positionY="9" width="128" height="73"/>
+        <element name="TodoTask" positionX="-63" positionY="-18" width="128" height="120"/>
     </elements>
 </model>

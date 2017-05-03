@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		876A0BDC1EBA6A3A00505F13 /* TodoTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 876A0BDB1EBA6A3A00505F13 /* TodoTask.m */; };
 		87F54C1C1EAF726A0084394A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F54C1B1EAF726A0084394A /* main.m */; };
 		87F54C1F1EAF726A0084394A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F54C1E1EAF726A0084394A /* AppDelegate.m */; };
 		87F54C251EAF726A0084394A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87F54C231EAF726A0084394A /* Main.storyboard */; };
@@ -26,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		876A0BDA1EBA6A3A00505F13 /* TodoTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TodoTask.h; path = Model/TodoTask.h; sourceTree = "<group>"; };
+		876A0BDB1EBA6A3A00505F13 /* TodoTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TodoTask.m; path = Model/TodoTask.m; sourceTree = "<group>"; };
 		87F54C171EAF726A0084394A /* OnlinicoTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnlinicoTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87F54C1B1EAF726A0084394A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		87F54C1D1EAF726A0084394A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -69,6 +72,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		876A0BD81EBA695600505F13 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				87F54C3B1EB063580084394A /* FeedTableViewController.h */,
+				87F54C3C1EB063580084394A /* FeedTableViewController.m */,
+				87F54C981EB21F250084394A /* ArticleViewController.h */,
+				87F54C991EB21F250084394A /* ArticleViewController.m */,
+				87F54CA11EB365F20084394A /* TasksTableViewController.h */,
+				87F54CA21EB365F20084394A /* TasksTableViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		876A0BD91EBA698300505F13 /* Core Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				87F54C261EAF726A0084394A /* OnlinicoTest.xcdatamodeld */,
+				876A0BDA1EBA6A3A00505F13 /* TodoTask.h */,
+				876A0BDB1EBA6A3A00505F13 /* TodoTask.m */,
+			);
+			name = "Core Data Model";
+			sourceTree = "<group>";
+		};
 		87F54C0E1EAF726A0084394A = {
 			isa = PBXGroup;
 			children = (
@@ -89,16 +115,12 @@
 			isa = PBXGroup;
 			children = (
 				87F54C231EAF726A0084394A /* Main.storyboard */,
-				87F54C3B1EB063580084394A /* FeedTableViewController.h */,
-				87F54C3C1EB063580084394A /* FeedTableViewController.m */,
+				876A0BD81EBA695600505F13 /* View Controllers */,
 				87F54C671EB1C9C30084394A /* FeedTableViewCell.h */,
 				87F54C681EB1C9C30084394A /* FeedTableViewCell.m */,
-				87F54C981EB21F250084394A /* ArticleViewController.h */,
-				87F54C991EB21F250084394A /* ArticleViewController.m */,
-				87F54CA11EB365F20084394A /* TasksTableViewController.h */,
-				87F54CA21EB365F20084394A /* TasksTableViewController.m */,
 				87F54C1D1EAF726A0084394A /* AppDelegate.h */,
 				87F54C1E1EAF726A0084394A /* AppDelegate.m */,
+				876A0BD91EBA698300505F13 /* Core Data Model */,
 				87F54C371EAF7EE40084394A /* Model */,
 				87F54C1A1EAF726A0084394A /* Supporting Files */,
 			);
@@ -119,7 +141,6 @@
 		87F54C371EAF7EE40084394A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				87F54C261EAF726A0084394A /* OnlinicoTest.xcdatamodeld */,
 				87F54C341EAF7EE00084394A /* Article.h */,
 				87F54C351EAF7EE00084394A /* Article.m */,
 				87F54C381EAF84950084394A /* XmlParser.h */,
@@ -222,6 +243,7 @@
 				87F54C9D1EB311C60084394A /* FormatUtilities.m in Sources */,
 				87F54C3A1EAF84950084394A /* XmlParser.m in Sources */,
 				87F54C8F1EB1E7900084394A /* GTMNSString+HTML.m in Sources */,
+				876A0BDC1EBA6A3A00505F13 /* TodoTask.m in Sources */,
 				87F54C9A1EB21F250084394A /* ArticleViewController.m in Sources */,
 				87F54C281EAF726A0084394A /* OnlinicoTest.xcdatamodeld in Sources */,
 				87F54C941EB1EFBA0084394A /* NSDate+InternetDateTime.m in Sources */,

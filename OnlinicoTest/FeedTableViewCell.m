@@ -37,8 +37,9 @@
     self.categoryLabel.text = self.article.category;
     
     // date
-    self.dateLabel.text = [[FormatUtilities dateFormatter] stringFromDate:self.article.pubDate];
-    
+    //self.dateLabel.text = [[FormatUtilities dateFormatter] stringFromDate:self.article.pubDate];
+    self.dateLabel.text = [FormatUtilities stringFromDate:self.article.pubDate];
+
     // CHECK THIS CODE!!!
     // image
     if (self.article.imagesUrls) {
@@ -68,7 +69,6 @@
 }
 
 // Can't use KVO here because the cell is reusable and can be deallocated
-// just updateUI from the VC
 
 //- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
 //    if (context == @selector(updateUI)) {

@@ -21,4 +21,8 @@
     return dateFormatter;
 }
 
++ (NSString *) stringFromDate:(NSDate *)date {
+    return [[FormatUtilities dateFormatter] stringFromDate:date];
+}
+
 @end

@@ -35,7 +35,8 @@
         self.textLabel.text = self.article.fullText;
         self.categoryLabel.text = self.article.category;
         self.linkLabel.text = self.article.link;
-        self.dateLabel.text = [[FormatUtilities dateFormatter] stringFromDate:self.article.pubDate];
+        //self.dateLabel.text = [[FormatUtilities dateFormatter] stringFromDate:self.article.pubDate];
+        self.dateLabel.text = [FormatUtilities stringFromDate:self.article.pubDate];
     }
 }
 
