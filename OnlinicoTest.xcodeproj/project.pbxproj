@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		876A0BDC1EBA6A3A00505F13 /* TodoTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 876A0BDB1EBA6A3A00505F13 /* TodoTask.m */; };
+		876A0BE21EBA76C900505F13 /* TaskDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 876A0BE11EBA76C900505F13 /* TaskDetailViewController.m */; };
 		87F54C1C1EAF726A0084394A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F54C1B1EAF726A0084394A /* main.m */; };
 		87F54C1F1EAF726A0084394A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F54C1E1EAF726A0084394A /* AppDelegate.m */; };
 		87F54C251EAF726A0084394A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87F54C231EAF726A0084394A /* Main.storyboard */; };
@@ -29,6 +30,8 @@
 /* Begin PBXFileReference section */
 		876A0BDA1EBA6A3A00505F13 /* TodoTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TodoTask.h; path = Model/TodoTask.h; sourceTree = "<group>"; };
 		876A0BDB1EBA6A3A00505F13 /* TodoTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TodoTask.m; path = Model/TodoTask.m; sourceTree = "<group>"; };
+		876A0BE01EBA76C900505F13 /* TaskDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskDetailViewController.h; sourceTree = "<group>"; };
+		876A0BE11EBA76C900505F13 /* TaskDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskDetailViewController.m; sourceTree = "<group>"; };
 		87F54C171EAF726A0084394A /* OnlinicoTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnlinicoTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87F54C1B1EAF726A0084394A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		87F54C1D1EAF726A0084394A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -81,6 +84,8 @@
 				87F54C991EB21F250084394A /* ArticleViewController.m */,
 				87F54CA11EB365F20084394A /* TasksTableViewController.h */,
 				87F54CA21EB365F20084394A /* TasksTableViewController.m */,
+				876A0BE01EBA76C900505F13 /* TaskDetailViewController.h */,
+				876A0BE11EBA76C900505F13 /* TaskDetailViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -252,6 +257,7 @@
 				87F54C691EB1C9C30084394A /* FeedTableViewCell.m in Sources */,
 				87F54C661EB1B9660084394A /* NetworkUtilities.m in Sources */,
 				87F54CA31EB365F20084394A /* TasksTableViewController.m in Sources */,
+				876A0BE21EBA76C900505F13 /* TaskDetailViewController.m in Sources */,
 				87F54C3D1EB063580084394A /* FeedTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

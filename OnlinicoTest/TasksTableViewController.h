@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
+#import "OnlinicoTest+CoreDataModel.h"
 
-@interface TasksTableViewController : UITableViewController
-
+@interface TasksTableViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+@property (strong, nonatomic) NSFetchedResultsController<TodoTask *> *fetchedResultsController;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @end
