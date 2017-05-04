@@ -10,6 +10,7 @@
 #import "FeedTableViewCell.h"
 #import "Article.h"
 #import "ArticleViewController.h"
+#import "XmlParser.h"
 
 @interface FeedTableViewController ()
 @property (nonatomic, strong) NSMutableArray *feedArray;

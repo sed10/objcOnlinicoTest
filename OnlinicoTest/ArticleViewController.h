@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Article.h"
+//#import "Article.h"
+@class Article;
 
 @interface ArticleViewController : UIViewController
 - (void)setNewArticle:(Article *)newArticle;

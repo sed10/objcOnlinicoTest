@@ -8,6 +8,7 @@
 
 #import "ArticleViewController.h"
 #import "FormatUtilities.h"
+#import "Article.h"
 
 @interface ArticleViewController ()
 @property (nonatomic, strong) Article *article;

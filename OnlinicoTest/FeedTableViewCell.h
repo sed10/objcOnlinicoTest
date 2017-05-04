@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Article.h"
+//#import "Article.h"
+@class Article;
 
 @interface FeedTableViewCell : UITableViewCell
 - (void)setNewArticle:(Article *)newArticle;

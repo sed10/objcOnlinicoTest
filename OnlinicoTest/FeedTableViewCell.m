@@ -8,6 +8,7 @@
 
 #import "FeedTableViewCell.h"
 #import "FormatUtilities.h"
+#import "Article.h"
 
 @interface FeedTableViewCell()
 @property (nonatomic, strong) Article *article;
