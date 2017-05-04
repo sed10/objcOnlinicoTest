@@ -7,6 +7,7 @@
 //
 
 #import "TaskDetailViewController.h"
+#import "FormatUtilities.h"
 
 @interface TaskDetailViewController ()
 
@@ -14,10 +15,33 @@
 
 @implementation TaskDetailViewController
 
+- (NSString *)statusToString:(TaskStatus)status {
+    NSString *result = nil;
+    
+    switch(status) {
+        case active:
+            result = @"Active";
+            break;
+        case completed:
+            result = @"Completed";
+            break;
+        case deleted:
+            result = @"Deleted";
+            break;
+        default:
+            [NSException raise:NSGenericException format:@"Unexpected task status."];
+    }
+    
+    return result;
+}
+
 - (void)configureView {
     // Update the user interface for the detail item.
     if (self.detailItem) {
-        self.taskDescriptionLabel.text = self.detailItem.title;
+        self.titleTextField.text = self.detailItem.title;
+        self.descriptionTextView.text = self.detailItem.text;
+        self.createdDateLabel.text = [FormatUtilities stringFromDate:self.detailItem.created];
+        self.statusLabel.text = [self statusToString:self.detailItem.status];
     }
 }
 

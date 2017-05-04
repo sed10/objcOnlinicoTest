@@ -37,10 +37,12 @@
 //    TodoTask *task1 = [NSEntityDescription insertNewObjectForEntityForName:@"TodoTask" inManagedObjectContext:self.managedObjectContext];
 //    task1.title = @"TODO Task 1";
 //    task1.created = [NSDate date];
-//    
+//    task1.text = @"TODO1 TODO1 TODO1 TODO1 TODO1 TODO1 TODO1 TODO1 TODO1 TODO1 TODO1 TODO1 TODO1 TODO1 TODO1 TODO1 TODO1 TODO1 TODO1 ";
+//
 //    TodoTask *task2 = [NSEntityDescription insertNewObjectForEntityForName:@"TodoTask" inManagedObjectContext:self.managedObjectContext];
 //    task2.title = @"TODO Task 2";
 //    task2.created = [NSDate date];
+//    task2.text = @"TODO2 TODO1 TODO1 TODO1 TODO1 TODO1 TODO1 TODO1 TODO1 TODO1 TODO1 TODO1 TODO1 TODO1 TODO1 TODO1 TODO1 TODO1 TODO1 ";
 //
 //    [self saveContext];
 }
@@ -140,7 +142,7 @@
     [fetchRequest setFetchBatchSize:20];
     
     // Edit the sort key as appropriate.
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"title" ascending:YES];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"created" ascending:NO];
     
     [fetchRequest setSortDescriptors:@[sortDescriptor]];
     
