@@ -13,6 +13,6 @@
 
 + (NSManagedObjectContext *) managedObjectContext;
 
-+ (void) saveContext;
++ (void) saveContext:(NSManagedObjectContext *)context;
 
 @end

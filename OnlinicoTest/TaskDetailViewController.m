@@ -42,6 +42,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
+    // fill in outlets
     if (self.task != nil) {
         self.titleTextField.text = self.task.title;
         self.descriptionTextView.text = self.task.text;
@@ -58,6 +59,17 @@
         self.editingAllowed = YES;
     }
     
+    // Done button above the keyboard
+    // can use UIBarButtonSystemItemDone here
+    UIBarButtonItem *hideButton = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStylePlain target:self.view action:@selector(endEditing:)];
+    UIBarButtonItem *flexSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 44.0)];
+    toolbar.items = @[flexSpace, hideButton];
+    
+    self.titleTextField.inputAccessoryView = toolbar;
+    self.descriptionTextView.inputAccessoryView = toolbar;
+    
+    // update
     [self updateUI];
     [self.titleTextField becomeFirstResponder];
 }
@@ -78,7 +90,7 @@
         self.task.title = self.titleTextField.text;
         self.task.text = self.descriptionTextView.text;
         self.task.status = 0;
-        [CoreDataUtils saveContext];
+        [CoreDataUtils saveContext:nil];
         
 
         if (self.saveCallback != nil) {

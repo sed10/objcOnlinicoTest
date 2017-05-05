@@ -66,12 +66,33 @@
     TodoTask *task = [self.fetchedResultsController objectAtIndexPath:indexPath];
     [self configureCell:cell withTask:task];
     
+    UISwipeGestureRecognizer* rightSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
+    [cell addGestureRecognizer:rightSwipe];
+    
     return cell;
+}
+
+- (void)handleSwipe:(UISwipeGestureRecognizer *) sender {
+    if (sender.direction == UISwipeGestureRecognizerDirectionRight) {
+        CGPoint point = [sender locationInView:self.tableView];
+        NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:point];
+        
+        TodoTask *task = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        // should use some enum or something
+        task.status = 1;
+        [CoreDataUtils saveContext:[self.fetchedResultsController managedObjectContext]];
+    }
 }
 
 - (void)configureCell:(UITableViewCell *)cell withTask:(TodoTask *)task {
     cell.textLabel.text = task.title;
     cell.detailTextLabel.text = [FormatUtilities stringFromDate:task.created];
+    
+    if (task.status == 1) {
+        NSDictionary* attributes = @{NSStrikethroughStyleAttributeName: [NSNumber numberWithInt:NSUnderlineStyleSingle]};
+        NSAttributedString* attributedString = [[NSAttributedString alloc] initWithString:task.title attributes:attributes];
+        cell.textLabel.attributedText = attributedString;
+    }
 }
 
 /*

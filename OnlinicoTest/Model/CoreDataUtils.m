@@ -20,8 +20,11 @@ static NSManagedObjectContext *__managedObjectContext;
     return __managedObjectContext;
 }
 
-+ (void) saveContext {
-    NSManagedObjectContext *context = [CoreDataUtils managedObjectContext];
++ (void) saveContext:(NSManagedObjectContext *)context {
+    if (context == nil) {
+        context = [CoreDataUtils managedObjectContext];
+    }
+    
     NSError *error = nil;
     if ([context hasChanges] && ![context save:&error]) {
         NSLog(@"Unresolved error %@, %@", error, error.userInfo);
