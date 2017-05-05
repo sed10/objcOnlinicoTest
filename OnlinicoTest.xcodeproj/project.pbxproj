@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		876A0BDC1EBA6A3A00505F13 /* TodoTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 876A0BDB1EBA6A3A00505F13 /* TodoTask.m */; };
 		876A0BE21EBA76C900505F13 /* TaskDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 876A0BE11EBA76C900505F13 /* TaskDetailViewController.m */; };
+		876F856A1EBC79C900DA0B84 /* CoreDataUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 876F85691EBC79C900DA0B84 /* CoreDataUtils.m */; };
 		87F54C1C1EAF726A0084394A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F54C1B1EAF726A0084394A /* main.m */; };
 		87F54C1F1EAF726A0084394A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F54C1E1EAF726A0084394A /* AppDelegate.m */; };
 		87F54C251EAF726A0084394A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87F54C231EAF726A0084394A /* Main.storyboard */; };
@@ -32,6 +33,8 @@
 		876A0BDB1EBA6A3A00505F13 /* TodoTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TodoTask.m; path = Model/TodoTask.m; sourceTree = "<group>"; };
 		876A0BE01EBA76C900505F13 /* TaskDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskDetailViewController.h; sourceTree = "<group>"; };
 		876A0BE11EBA76C900505F13 /* TaskDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskDetailViewController.m; sourceTree = "<group>"; };
+		876F85681EBC79C900DA0B84 /* CoreDataUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreDataUtils.h; path = Model/CoreDataUtils.h; sourceTree = "<group>"; };
+		876F85691EBC79C900DA0B84 /* CoreDataUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreDataUtils.m; path = Model/CoreDataUtils.m; sourceTree = "<group>"; };
 		87F54C171EAF726A0084394A /* OnlinicoTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnlinicoTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87F54C1B1EAF726A0084394A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		87F54C1D1EAF726A0084394A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -96,8 +99,19 @@
 				87F54C261EAF726A0084394A /* OnlinicoTest.xcdatamodeld */,
 				876A0BDA1EBA6A3A00505F13 /* TodoTask.h */,
 				876A0BDB1EBA6A3A00505F13 /* TodoTask.m */,
+				876F85681EBC79C900DA0B84 /* CoreDataUtils.h */,
+				876F85691EBC79C900DA0B84 /* CoreDataUtils.m */,
 			);
 			name = "Core Data Model";
+			sourceTree = "<group>";
+		};
+		876F85601EBB383B00DA0B84 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				87F54C671EB1C9C30084394A /* FeedTableViewCell.h */,
+				87F54C681EB1C9C30084394A /* FeedTableViewCell.m */,
+			);
+			name = "Custom Views";
 			sourceTree = "<group>";
 		};
 		87F54C0E1EAF726A0084394A = {
@@ -121,12 +135,11 @@
 			children = (
 				87F54C231EAF726A0084394A /* Main.storyboard */,
 				876A0BD81EBA695600505F13 /* View Controllers */,
-				87F54C671EB1C9C30084394A /* FeedTableViewCell.h */,
-				87F54C681EB1C9C30084394A /* FeedTableViewCell.m */,
-				87F54C1D1EAF726A0084394A /* AppDelegate.h */,
-				87F54C1E1EAF726A0084394A /* AppDelegate.m */,
+				876F85601EBB383B00DA0B84 /* Custom Views */,
 				876A0BD91EBA698300505F13 /* Core Data Model */,
 				87F54C371EAF7EE40084394A /* Model */,
+				87F54C1D1EAF726A0084394A /* AppDelegate.h */,
+				87F54C1E1EAF726A0084394A /* AppDelegate.m */,
 				87F54C1A1EAF726A0084394A /* Supporting Files */,
 			);
 			path = OnlinicoTest;
@@ -258,6 +271,7 @@
 				87F54C661EB1B9660084394A /* NetworkUtilities.m in Sources */,
 				87F54CA31EB365F20084394A /* TasksTableViewController.m in Sources */,
 				876A0BE21EBA76C900505F13 /* TaskDetailViewController.m in Sources */,
+				876F856A1EBC79C900DA0B84 /* CoreDataUtils.m in Sources */,
 				87F54C3D1EB063580084394A /* FeedTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

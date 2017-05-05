@@ -8,11 +8,10 @@
 
 #import "TasksTableViewController.h"
 #import "TaskDetailViewController.h"
-#import "AppDelegate.h"
 #import "FormatUtilities.h"
+#import "CoreDataUtils.h"
 
 @interface TasksTableViewController ()
-
 @end
 
 @implementation TasksTableViewController
@@ -20,8 +19,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.managedObjectContext = ((AppDelegate *)UIApplication.sharedApplication.delegate).persistentContainer.viewContext;
-
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -44,18 +41,12 @@
 //    task2.created = [NSDate date];
 //    task2.text = @"TODO2 TODO1 TODO1 TODO1 TODO1 TODO1 TODO1 TODO1 TODO1 TODO1 TODO1 TODO1 TODO1 TODO1 TODO1 TODO1 TODO1 TODO1 TODO1 ";
 //
-//    [self saveContext];
+//    [CoreDataUtils saveContext];
+    
 }
 
-- (void)saveContext {
-    // Save the context.
-    NSError *error = nil;
-    if ([self.managedObjectContext hasChanges] && ![self.managedObjectContext save:&error]) {
-        // Replace this implementation with code to handle the error appropriately.
-        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-        NSLog(@"Unresolved error %@, %@", error, error.userInfo);
-        abort();
-    }
+- (IBAction)pressedAddButton:(UIBarButtonItem *)sender {
+    [self performSegueWithIdentifier:@"showTaskDetail" sender:nil];
 }
 
 #pragma mark - Table view data source
@@ -109,6 +100,11 @@
     [self setEditing:NO animated:YES];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    TodoTask *task = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    [self performSegueWithIdentifier:@"showTaskDetail" sender:task];
+}
+
 #pragma mark - Fetched results controller
 
 - (NSFetchedResultsController<TodoTask *> *)fetchedResultsController {
@@ -129,8 +125,7 @@
     
     // Edit the section name key path and cache name if appropriate.
     // nil for section name key path means "no sections".
-    //    NSFetchedResultsController<Event *> *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:@"Master"];
-    NSFetchedResultsController<TodoTask *> *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:@"TodoTasks"];
+    NSFetchedResultsController<TodoTask *> *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:[CoreDataUtils managedObjectContext] sectionNameKeyPath:nil cacheName:@"TodoTasks"];
     aFetchedResultsController.delegate = self;
     
     NSError *error = nil;
@@ -206,13 +201,15 @@
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        TodoTask *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    //NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+
+    if ([[segue identifier] isEqualToString:@"showTaskDetail"]) {
         TaskDetailViewController *controller = (TaskDetailViewController *)[segue destinationViewController];
-        [controller setDetailItem:object];
-        controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
-        controller.navigationItem.leftItemsSupplementBackButton = YES;
+        
+        // callback is not needed here but I don't want to delete it
+        [controller configureViewForTask:sender withSaveCallback:^{
+            NSLog(@"Task is saved");
+        }];
     }
 }
 

@@ -12,6 +12,8 @@
 #import "GTMNSString+HTML.h"        // module to unescape HTML characters
 #import "NSDate+InternetDateTime.h" // module to convert NSString to NSDate
 
+// should use constants here
+
 @interface XmlParser()
 @property (nonatomic, strong) NSMutableArray *articles;
 @property (nonatomic, strong) Article *currentArticle;

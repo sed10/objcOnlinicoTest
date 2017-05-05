@@ -15,13 +15,9 @@ typedef enum {
     deleted
 } TaskStatus;
 
-@interface TaskDetailViewController : UIViewController
+@interface TaskDetailViewController : UIViewController <UITextFieldDelegate>
 
-@property (strong, nonatomic) TodoTask *detailItem;
-@property (weak, nonatomic) IBOutlet UITextField *titleTextField;
-@property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;
-@property (weak, nonatomic) IBOutlet UILabel *createdDateLabel;
-@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
+- (void)configureViewForTask:(TodoTask *)task withSaveCallback:(void(^)())callback;
 
 @end
 
