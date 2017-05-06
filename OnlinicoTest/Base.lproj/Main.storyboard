@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LcE-Ds-hcC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LcE-Ds-hcC">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -469,7 +469,7 @@
         <scene sceneID="pBe-QM-7un">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uN1-TZ-boJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="TELEGRAF.IN.UA" id="org-FK-O48"/>
+                    <tabBarItem key="tabBarItem" title="TELEGRAF.IN.UA" image="FeedBarItem" id="org-FK-O48"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7xe-tY-Khe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -488,7 +488,7 @@
         <scene sceneID="JD5-89-t9X">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wL4-FP-Drw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="TODO LIST" id="wRd-8z-j7V"/>
+                    <tabBarItem key="tabBarItem" title="TODO LIST" image="TodoBarItem" id="wRd-8z-j7V"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tLg-SC-ptt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -504,6 +504,10 @@
             <point key="canvasLocation" x="172" y="187.55622188905548"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="FeedBarItem" width="30" height="30"/>
+        <image name="TodoBarItem" width="30" height="30"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="z7H-w9-iEO"/>
     </inferredMetricsTieBreakers>
