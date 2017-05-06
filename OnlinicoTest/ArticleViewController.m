@@ -16,7 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *textLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *categoryLabel;
-@property (weak, nonatomic) IBOutlet UILabel *linkLabel;
+@property (weak, nonatomic) IBOutlet UITextView *linkTextView;
 @end
 
 @implementation ArticleViewController
@@ -35,7 +35,8 @@
         self.titleLabel.text = self.article.title;
         self.textLabel.text = self.article.fullText;
         self.categoryLabel.text = self.article.category;
-        self.linkLabel.text = self.article.link;
+        //self.linkLabel.text = self.article.link;
+        self.linkTextView.text = self.article.link;
         //self.dateLabel.text = [[FormatUtilities dateFormatter] stringFromDate:self.article.pubDate];
         self.dateLabel.text = [FormatUtilities stringFromDate:self.article.pubDate];
     }
