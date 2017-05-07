@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		872447F11EBEC6F60042754F /* ArticleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 872447F01EBEC6F60042754F /* ArticleTableViewController.m */; };
+		872447F41EBECBBC0042754F /* ArticleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 872447F31EBECBBC0042754F /* ArticleCell.m */; };
 		876A0BDC1EBA6A3A00505F13 /* TodoTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 876A0BDB1EBA6A3A00505F13 /* TodoTask.m */; };
 		876A0BE21EBA76C900505F13 /* TaskDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 876A0BE11EBA76C900505F13 /* TaskDetailViewController.m */; };
 		876F856A1EBC79C900DA0B84 /* CoreDataUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 876F85691EBC79C900DA0B84 /* CoreDataUtils.m */; };
@@ -23,12 +25,15 @@
 		87F54C691EB1C9C30084394A /* FeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F54C681EB1C9C30084394A /* FeedTableViewCell.m */; };
 		87F54C8F1EB1E7900084394A /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F54C8E1EB1E7900084394A /* GTMNSString+HTML.m */; };
 		87F54C941EB1EFBA0084394A /* NSDate+InternetDateTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F54C931EB1EFBA0084394A /* NSDate+InternetDateTime.m */; };
-		87F54C9A1EB21F250084394A /* ArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F54C991EB21F250084394A /* ArticleViewController.m */; };
 		87F54C9D1EB311C60084394A /* FormatUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F54C9C1EB311C60084394A /* FormatUtilities.m */; };
 		87F54CA31EB365F20084394A /* TasksTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F54CA21EB365F20084394A /* TasksTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		872447EF1EBEC6F60042754F /* ArticleTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleTableViewController.h; sourceTree = "<group>"; };
+		872447F01EBEC6F60042754F /* ArticleTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleTableViewController.m; sourceTree = "<group>"; };
+		872447F21EBECBBC0042754F /* ArticleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleCell.h; sourceTree = "<group>"; };
+		872447F31EBECBBC0042754F /* ArticleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleCell.m; sourceTree = "<group>"; };
 		876A0BDA1EBA6A3A00505F13 /* TodoTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TodoTask.h; path = Model/TodoTask.h; sourceTree = "<group>"; };
 		876A0BDB1EBA6A3A00505F13 /* TodoTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TodoTask.m; path = Model/TodoTask.m; sourceTree = "<group>"; };
 		876A0BE01EBA76C900505F13 /* TaskDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskDetailViewController.h; sourceTree = "<group>"; };
@@ -59,8 +64,6 @@
 		87F54C901EB1E8C60084394A /* GTMDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTMDefines.h; path = ParsingUtilities/GTMDefines.h; sourceTree = "<group>"; };
 		87F54C921EB1EFBA0084394A /* NSDate+InternetDateTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+InternetDateTime.h"; path = "ParsingUtilities/NSDate+InternetDateTime.h"; sourceTree = "<group>"; };
 		87F54C931EB1EFBA0084394A /* NSDate+InternetDateTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+InternetDateTime.m"; path = "ParsingUtilities/NSDate+InternetDateTime.m"; sourceTree = "<group>"; };
-		87F54C981EB21F250084394A /* ArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleViewController.h; sourceTree = "<group>"; };
-		87F54C991EB21F250084394A /* ArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleViewController.m; sourceTree = "<group>"; };
 		87F54C9B1EB311C60084394A /* FormatUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FormatUtilities.h; path = Model/FormatUtilities.h; sourceTree = "<group>"; };
 		87F54C9C1EB311C60084394A /* FormatUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FormatUtilities.m; path = Model/FormatUtilities.m; sourceTree = "<group>"; };
 		87F54CA11EB365F20084394A /* TasksTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TasksTableViewController.h; sourceTree = "<group>"; };
@@ -83,8 +86,8 @@
 			children = (
 				87F54C3B1EB063580084394A /* FeedTableViewController.h */,
 				87F54C3C1EB063580084394A /* FeedTableViewController.m */,
-				87F54C981EB21F250084394A /* ArticleViewController.h */,
-				87F54C991EB21F250084394A /* ArticleViewController.m */,
+				872447EF1EBEC6F60042754F /* ArticleTableViewController.h */,
+				872447F01EBEC6F60042754F /* ArticleTableViewController.m */,
 				87F54CA11EB365F20084394A /* TasksTableViewController.h */,
 				87F54CA21EB365F20084394A /* TasksTableViewController.m */,
 				876A0BE01EBA76C900505F13 /* TaskDetailViewController.h */,
@@ -110,6 +113,8 @@
 			children = (
 				87F54C671EB1C9C30084394A /* FeedTableViewCell.h */,
 				87F54C681EB1C9C30084394A /* FeedTableViewCell.m */,
+				872447F21EBECBBC0042754F /* ArticleCell.h */,
+				872447F31EBECBBC0042754F /* ArticleCell.m */,
 			);
 			name = "Custom Views";
 			sourceTree = "<group>";
@@ -262,14 +267,15 @@
 				87F54C3A1EAF84950084394A /* XmlParser.m in Sources */,
 				87F54C8F1EB1E7900084394A /* GTMNSString+HTML.m in Sources */,
 				876A0BDC1EBA6A3A00505F13 /* TodoTask.m in Sources */,
-				87F54C9A1EB21F250084394A /* ArticleViewController.m in Sources */,
 				87F54C281EAF726A0084394A /* OnlinicoTest.xcdatamodeld in Sources */,
 				87F54C941EB1EFBA0084394A /* NSDate+InternetDateTime.m in Sources */,
 				87F54C1F1EAF726A0084394A /* AppDelegate.m in Sources */,
 				87F54C1C1EAF726A0084394A /* main.m in Sources */,
+				872447F11EBEC6F60042754F /* ArticleTableViewController.m in Sources */,
 				87F54C691EB1C9C30084394A /* FeedTableViewCell.m in Sources */,
 				87F54C661EB1B9660084394A /* NetworkUtilities.m in Sources */,
 				87F54CA31EB365F20084394A /* TasksTableViewController.m in Sources */,
+				872447F41EBECBBC0042754F /* ArticleCell.m in Sources */,
 				876A0BE21EBA76C900505F13 /* TaskDetailViewController.m in Sources */,
 				876F856A1EBC79C900DA0B84 /* CoreDataUtils.m in Sources */,
 				87F54C3D1EB063580084394A /* FeedTableViewController.m in Sources */,

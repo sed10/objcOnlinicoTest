@@ -9,7 +9,7 @@
 #import "FeedTableViewController.h"
 #import "FeedTableViewCell.h"
 #import "Article.h"
-#import "ArticleViewController.h"
+#import "ArticleTableViewController.h"
 #import "XmlParser.h"
 
 @interface FeedTableViewController ()
@@ -107,13 +107,13 @@
     // Pass the selected object to the new view controller.
     
     // CHECK THIS CODE!!!
-    if ([segue.identifier hasPrefix:@"showArticle"]) {
-        if ([segue.destinationViewController isKindOfClass:[ArticleViewController class]]) {
+    if ([segue.identifier isEqualToString:@"showArticle"]) {
+        if ([segue.destinationViewController isKindOfClass:[ArticleTableViewController class]]) {
             if ([sender isKindOfClass:[FeedTableViewCell class]]) {
                 NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-                ArticleViewController *articleVC = (ArticleViewController *)segue.destinationViewController;
+                ArticleTableViewController *articleVC = (ArticleTableViewController *)segue.destinationViewController;
                 Article *selectedArticle = self.feedArray[indexPath.section][indexPath.row];
-                [articleVC setNewArticle:selectedArticle];
+                [articleVC configureForArticle:selectedArticle];
             }
         }
     }
