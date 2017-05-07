@@ -372,7 +372,7 @@
         <scene sceneID="zGd-RX-um7">
             <objects>
                 <tableViewController id="ZFH-vz-jO7" customClass="ArticleTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" id="Lsl-f7-Joq">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" id="Lsl-f7-Joq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -442,7 +442,7 @@
                                     <outlet property="titleLabel" destination="TnR-fN-WBa" id="0Tg-vx-2Cx"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="articleImageCell" id="nfQ-FX-VaA">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="articleImageCell" id="nfQ-FX-VaA" customClass="ImageCell">
                                 <rect key="frame" x="0.0" y="174" width="375" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nfQ-FX-VaA" id="bTo-8K-i4A">
@@ -460,6 +460,9 @@
                                         <constraint firstItem="PMu-X3-Ucn" firstAttribute="top" secondItem="bTo-8K-i4A" secondAttribute="topMargin" id="leE-A1-x8x"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="image" destination="PMu-X3-Ucn" id="aqH-lX-iUr"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		872447F11EBEC6F60042754F /* ArticleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 872447F01EBEC6F60042754F /* ArticleTableViewController.m */; };
 		872447F41EBECBBC0042754F /* ArticleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 872447F31EBECBBC0042754F /* ArticleCell.m */; };
+		872447F71EBED06F0042754F /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 872447F61EBED06F0042754F /* ImageCell.m */; };
 		876A0BDC1EBA6A3A00505F13 /* TodoTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 876A0BDB1EBA6A3A00505F13 /* TodoTask.m */; };
 		876A0BE21EBA76C900505F13 /* TaskDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 876A0BE11EBA76C900505F13 /* TaskDetailViewController.m */; };
 		876F856A1EBC79C900DA0B84 /* CoreDataUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 876F85691EBC79C900DA0B84 /* CoreDataUtils.m */; };
@@ -34,6 +35,8 @@
 		872447F01EBEC6F60042754F /* ArticleTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleTableViewController.m; sourceTree = "<group>"; };
 		872447F21EBECBBC0042754F /* ArticleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleCell.h; sourceTree = "<group>"; };
 		872447F31EBECBBC0042754F /* ArticleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleCell.m; sourceTree = "<group>"; };
+		872447F51EBED06F0042754F /* ImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCell.h; sourceTree = "<group>"; };
+		872447F61EBED06F0042754F /* ImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCell.m; sourceTree = "<group>"; };
 		876A0BDA1EBA6A3A00505F13 /* TodoTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TodoTask.h; path = Model/TodoTask.h; sourceTree = "<group>"; };
 		876A0BDB1EBA6A3A00505F13 /* TodoTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TodoTask.m; path = Model/TodoTask.m; sourceTree = "<group>"; };
 		876A0BE01EBA76C900505F13 /* TaskDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskDetailViewController.h; sourceTree = "<group>"; };
@@ -115,6 +118,8 @@
 				87F54C681EB1C9C30084394A /* FeedTableViewCell.m */,
 				872447F21EBECBBC0042754F /* ArticleCell.h */,
 				872447F31EBECBBC0042754F /* ArticleCell.m */,
+				872447F51EBED06F0042754F /* ImageCell.h */,
+				872447F61EBED06F0042754F /* ImageCell.m */,
 			);
 			name = "Custom Views";
 			sourceTree = "<group>";
@@ -278,6 +283,7 @@
 				872447F41EBECBBC0042754F /* ArticleCell.m in Sources */,
 				876A0BE21EBA76C900505F13 /* TaskDetailViewController.m in Sources */,
 				876F856A1EBC79C900DA0B84 /* CoreDataUtils.m in Sources */,
+				872447F71EBED06F0042754F /* ImageCell.m in Sources */,
 				87F54C3D1EB063580084394A /* FeedTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
