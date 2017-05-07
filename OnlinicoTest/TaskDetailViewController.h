@@ -9,12 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "OnlinicoTest+CoreDataModel.h"
 
-typedef enum {
-    active,
-    completed,
-    deleted
-} TaskStatus;
-
 @interface TaskDetailViewController : UIViewController <UITextFieldDelegate>
 
 - (void)configureViewForTask:(TodoTask *)task withSaveCallback:(void(^)())callback;

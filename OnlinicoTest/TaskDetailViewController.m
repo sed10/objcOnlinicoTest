@@ -47,14 +47,14 @@
         self.titleTextField.text = self.task.title;
         self.descriptionTextView.text = self.task.text;
         self.createdDateLabel.text = [FormatUtilities stringFromDate:self.task.created];
-        self.statusLabel.text = [self statusToString:self.task.status];
+        self.statusLabel.text = [self.task statusToString];
         
         self.editingAllowed = NO;
     } else {
         self.titleTextField.text = nil;
         self.descriptionTextView.text = nil;
         self.createdDateLabel.text = [FormatUtilities stringFromDate:[NSDate date]];
-        self.statusLabel.text = [self statusToString:0];
+        self.statusLabel.text = [TodoTask stringForStatus:ACTIVE_TASK];
         
         self.editingAllowed = YES;
     }
@@ -102,26 +102,6 @@
         self.editingAllowed = YES;
     }
     [self updateUI];
-}
-
-- (NSString *)statusToString:(TaskStatus)status {
-    NSString *result = nil;
-    
-    switch(status) {
-        case active:
-            result = @"Active";
-            break;
-        case completed:
-            result = @"Completed";
-            break;
-        case deleted:
-            result = @"Deleted";
-            break;
-        default:
-            [NSException raise:NSGenericException format:@"Unexpected task status."];
-    }
-    
-    return result;
 }
 
 - (void)updateUI {

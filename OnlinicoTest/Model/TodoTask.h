@@ -8,6 +8,13 @@
 
 #import <CoreData/CoreData.h>
 
-@interface TodoTask : NSManagedObject
+typedef enum {
+    ACTIVE_TASK,
+    COMPLETED_TASK,
+    DELETED_TASK
+} TaskStatus;
 
+@interface TodoTask : NSManagedObject
++ (NSString *)stringForStatus:(TaskStatus)status;
+- (NSString *)statusToString;
 @end
