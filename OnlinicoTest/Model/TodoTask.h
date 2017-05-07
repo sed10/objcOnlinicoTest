@@ -9,9 +9,9 @@
 #import <CoreData/CoreData.h>
 
 typedef enum {
-    ACTIVE_TASK,
-    COMPLETED_TASK,
-    DELETED_TASK
+    TaskStatusActive,
+    TaskStatusCompleted,
+    TaskStatusDeleted
 } TaskStatus;
 
 @interface TodoTask : NSManagedObject

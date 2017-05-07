@@ -79,7 +79,7 @@
         
         TodoTask *task = [self.fetchedResultsController objectAtIndexPath:indexPath];
         // should use some enum or something
-        task.status = COMPLETED_TASK;
+        task.status = TaskStatusCompleted;
         [CoreDataUtils saveContext:[self.fetchedResultsController managedObjectContext]];
     }
 }

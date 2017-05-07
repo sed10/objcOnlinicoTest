@@ -15,13 +15,13 @@
     NSString *result = nil;
     
     switch(status) {
-        case ACTIVE_TASK:
+        case TaskStatusActive:
             result = @"Active";
             break;
-        case COMPLETED_TASK:
+        case TaskStatusCompleted:
             result = @"Completed";
             break;
-        case DELETED_TASK:
+        case TaskStatusDeleted:
             result = @"Deleted";
             break;
         default:

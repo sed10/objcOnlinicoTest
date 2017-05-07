@@ -54,7 +54,7 @@
         self.titleTextField.text = nil;
         self.descriptionTextView.text = nil;
         self.createdDateLabel.text = [FormatUtilities stringFromDate:[NSDate date]];
-        self.statusLabel.text = [TodoTask stringForStatus:ACTIVE_TASK];
+        self.statusLabel.text = [TodoTask stringForStatus:TaskStatusActive];
         
         self.editingAllowed = YES;
     }
@@ -89,7 +89,7 @@
         }
         self.task.title = self.titleTextField.text;
         self.task.text = self.descriptionTextView.text;
-        self.task.status = 0;
+        self.task.status = TaskStatusActive;
         [CoreDataUtils saveContext:nil];
         
 
